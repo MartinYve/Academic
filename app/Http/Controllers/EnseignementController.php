@@ -43,20 +43,21 @@ class EnseignementController extends Controller
     public function create()
     {
         $enseignantss = Enseignant::all() ;
-        if (!empty($enseignantss)) {
+        if (empty($enseignantss)) {
             toast("Veillez d'abord crée un ou plusieurs enseignants.",'error');
             return redirect()->route('enseignant.create');
         } else {
-            $enseignant_id = [] ;
-        $id = Enseignement::select('enseignant_id')->get()->toArray();
+        $enseignement_id = [] ;
+        $id = Enseignement::select('id')->get()->toArray();
+        // dd($id) ;
         foreach ($id as $key1 => $values) {
             foreach ($values as $key2 => $value) {
-                $enseignant_id [] = $value ;
+                $enseignement_id [] = $value ;
             }
         };
         // dd($enseignement_id);
-        $enseignants = Enseignement::whereNotIn('id' , $enseignant_id)->get() ;
-
+        $enseignants = Enseignant::whereNotIn('id' , $enseignement_id)->get() ;
+        // dd($enseignants);
         $options = Option::all();
         $jours = Jour::all();
         $periodes = Periode::all();
@@ -76,17 +77,21 @@ class EnseignementController extends Controller
         $names = $request->name;
         $credits = $request->credit;
         $option_id = $request->option_id;
-
+        $enseignement_id = $request->enseignant_id ;
+        // dd($request->enseignant_id) ;
         foreach ($names as $key1 => $name) {
             foreach ($option_id as $key2 => $id) {
                foreach ($credits as $key3 => $credit) {
-                if ($key1 == $key2 && $key1==$key3) {
-                    DB::table('enseignements')->insert([
-                        'option_id' => $id,
-                        'name' => $name,
-                        'credit' => $credit
-                    ]);
-                   }
+                foreach ($enseignement_id as $key4 => $enseignement) {
+                    if ($key1 == $key2 && $key1==$key3 && $key1 == $key3) {
+                        DB::table('enseignements')->insert([
+                            'option_id' => $id,
+                            'enseignant_id' => $enseignement,
+                            'name' => $name,
+                            'credit' => $credit
+                        ]);
+                       }
+                }
                }
             }
         }

@@ -42,7 +42,7 @@
                            <div class="form-group">
                               <label> Role:</label>
                               <select class="form-control select2"  name="roles[]" id="selectuserrole" required>
-                                 <option value="Etudiant" >{{ 'Enseignant' }}</option>
+                                 <option value="Enseignant" >{{ 'Enseignant' }}</option>
                               </select>
                            </div>
                      </div>

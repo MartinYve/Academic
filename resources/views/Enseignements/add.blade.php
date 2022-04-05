@@ -53,7 +53,7 @@
                                                     <span class="form-text text-muted" role="alert"><strong class="text-danger email" ></strong></span>
                                                     <div class="form-group col-md-6">
                                                         <label>Enseignant :</label>
-                                                        <select class="form-control select2"  name="option_id[]" id="selectuserrole" required>
+                                                        <select class="form-control select2"  name="enseignant_id[]" id="selectuserrole" required>
                                                         @foreach($enseignants as $id => $enseignant)
                                                         <option value="{{ $enseignant->id }}">{{ $enseignant->name }}</option>
                                                         @endforeach
