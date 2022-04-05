@@ -53,11 +53,11 @@ class EnseignementController extends Controller
             }
         };
         // dd($enseignement_id);
-        $enseignants = Enseignant::whereNotIn('id' , $enseignement_id)->get()->toArray() ;
+        $enseignants = Enseignant::whereNotIn('id' , $enseignement_id)->get();
         $enseignantss = Enseignant::whereNotIn('id' , $enseignement_id)->get()->toArray() ;
 
         if (empty($enseignantss)) {
-            toast("Veillez d'abord crée un ou plusieurs enseignants.",'error');
+            toast("Veillez d'abord crée un ou plusieurs enseignants n'ayant pas d'enseignement.",'error');
             return redirect()->route('enseignant.create');
         } else {
         $options = Option::all();
