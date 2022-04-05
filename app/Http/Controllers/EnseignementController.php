@@ -22,6 +22,8 @@ class EnseignementController extends Controller
     {
         $enseignement_id = [] ;
         $enseignements = Enseignement::all();
+        $enseignementss = Enseignement::all()->toArray();
+     
         $id = Periode::select('Enseignement_id')->get()->toArray();
         foreach ($id as $key1 => $values) {
             foreach ($values as $key2 => $value) {
@@ -32,7 +34,7 @@ class EnseignementController extends Controller
         $enseignement_per = Enseignement::whereNotIn('id' , $enseignement_id)->get() ;
         // dd($enseignement_per);
         $jours = Jour::all();
-        return view('Enseignements.liste', compact('enseignements' , 'jours' , 'enseignement_per'));
+        return view('Enseignements.liste', compact('enseignements', 'enseignementss' , 'jours' , 'enseignement_per'));
     }
 
     /**
@@ -42,11 +44,6 @@ class EnseignementController extends Controller
      */
     public function create()
     {
-        $enseignantss = Enseignant::all() ;
-        if (empty($enseignantss)) {
-            toast("Veillez d'abord crée un ou plusieurs enseignants.",'error');
-            return redirect()->route('enseignant.create');
-        } else {
         $enseignement_id = [] ;
         $id = Enseignement::select('id')->get()->toArray();
         // dd($id) ;
@@ -56,8 +53,13 @@ class EnseignementController extends Controller
             }
         };
         // dd($enseignement_id);
-        $enseignants = Enseignant::whereNotIn('id' , $enseignement_id)->get() ;
-        // dd($enseignants);
+        $enseignants = Enseignant::whereNotIn('id' , $enseignement_id)->get()->toArray() ;
+        $enseignantss = Enseignant::whereNotIn('id' , $enseignement_id)->get()->toArray() ;
+
+        if (empty($enseignantss)) {
+            toast("Veillez d'abord crée un ou plusieurs enseignants.",'error');
+            return redirect()->route('enseignant.create');
+        } else {
         $options = Option::all();
         $jours = Jour::all();
         $periodes = Periode::all();

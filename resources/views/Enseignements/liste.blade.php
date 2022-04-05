@@ -21,12 +21,16 @@
                               <div class="col-sm-12 col-md-6">
                                  <div id="user_list_datatable_info" class="dataTables_filter">
                                     <!-- Button trigger modal -->
-                                    @if(!empty($enseignements))
+                                    @if(!empty($enseignementss))
                                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
                                         Créer une période
                                         </button>
                                     @endif
-                                    
+                                    @if(empty($enseignementss))
+                                        <button type="button" class="btn btn-primary">
+                                        <a style="color: #fff;" href="{{route('Enseignements.create') }}">Créer un enseignement</a>
+                                        </button>
+                                    @endif
                                     <!-- Modal -->
                                     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                         <div class="modal-dialog" role="document">
