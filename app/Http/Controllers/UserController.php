@@ -18,7 +18,17 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users = User::all();
+        $new_etudiant = [] ;
+        $role = Role::select('*')->where('name' , 'Etudiant')->get()->toArray();
+        // dd($role) ;
+        $etudiant_table = DB::table('role_user')->select('user_id')->where('role_id' , $role['0']['id'])->get()->toArray();
+        foreach ($etudiant_table as $key1 => $values) {
+            foreach ($values as $key2 => $value) {
+                $new_etudiant [] = $value ;
+            }
+        };
+        // dd($new_etudiant) ;
+        $users = User::whereIn('id' , $new_etudiant)->get();
         return view('users.list', compact('users'));
     }
 
@@ -45,13 +55,10 @@ class UserController extends Controller
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
             'last_name' => ['required', 'string', 'max:255'],
-            'matricule' => ['required', 'string', 'max:255'],
-            'option' => ['required'],
-            'phone_number' => ['required', 'numeric'],
-            'avatar' => 'sometimes|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
+            'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
+
         $user = User::create($request->all());
         // dd('pass');
         
@@ -86,7 +93,10 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        //
+        $roles = Role::get()->pluck('name', 'name');
+        $options = Option::all();
+        $user = User::select('*')->where('id' , $id)->first();
+        return view('users.edit', compact('user', 'roles', 'options'));
     }
 
     /**
@@ -98,7 +108,29 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $user = User::select('*')->where('id' , $id)->first();
+        $request->validate([
+            'name' => ['required', 'string', 'max:255'],
+            'last_name' => ['required', 'string', 'max:255'],
+            'password' => ['required', 'string', 'min:8', 'confirmed'],
+        ]);
+       
+        $user->update($request->all());
+        
+        $user_role = DB::table('role_user')->where('user_id',$id);
+        
+        $user_role->delete();
+        $roles = $request->input('roles') ? $request->input('roles') : [];   
+        $id_role = Role::select('id')->where('name', $roles)->get()->first()->toArray();   
+        $id = DB::table('role_user')->latest('id')->first();
+        foreach ($id_role as $key => $value) {
+            DB::insert('insert into role_user(id, user_id, role_id) values(?,?,?)', [$id->id + 1,$user->id, $value]);
+        }
+        
+        toast(trans('User has been successfully updated.'), 'success');
+
+        return redirect()->route('users.index');
+
     }
 
     /**

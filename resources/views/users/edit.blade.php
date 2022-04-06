@@ -1,272 +1,140 @@
 @extends('layouts.app_back')
 
 @section('content')
+
+<?php $r = \Route::current()->getAction() ?>
+
+<?php $route = (isset($r['as'])) ? $r['as'] : ''; ?>
+
 <div id="content-page" class="content-page">
-            <div class="container-fluid">
-               <div class="row">
-                  <div class="col-lg-12">
-                     <div class="iq-card">
-                        <div class="iq-card-body p-0">
-                           <div class="iq-edit-list">
-                              <ul class="iq-edit-profile d-flex nav nav-pills">
-                                 <li class="col-md-3 p-0">
-                                    <a class="nav-link active" data-toggle="pill" href="#personal-information">
-                                       Personal Information
-                                    </a>
-                                 </li>
-                                 <li class="col-md-3 p-0">
-                                    <a class="nav-link" data-toggle="pill" href="#chang-pwd">
-                                       Change Password
-                                    </a>
-                                 </li>
-                                 <li class="col-md-3 p-0">
-                                    <a class="nav-link" data-toggle="pill" href="#emailandsms">
-                                       Email and SMS
-                                    </a>
-                                 </li>
-                                  <li class="col-md-3 p-0">
-                                    <a class="nav-link" data-toggle="pill" href="#manage-contact">
-                                       Manage Contact
-                                    </a>
-                                 </li>
-                              </ul>
+      <div class="container-fluid">
+         <div class="row">
+            <div class="col-lg-3">
+                  <div class="iq-card">
+                     <div class="iq-card-header d-flex justify-content-between">
+                        <div class="iq-header-title">
+                           <h4 class="card-title">Profil</h4>
+                        </div>
+                     </div>
+                     <div class="iq-card-body">
+                        <form class="form" method="POST"
+                                action="{{ route('users.update',['user'=>$user->id]) }}" enctype="multipart/form-data">
+                                @csrf
+                                @method('PUT')
+                           <div class="form-group">
+                              <div class="add-img-user profile-img-edit">
+                                 <img class="profile-pic img-fluid" src="{{asset('back/images/user/11.png')}}" alt="profile-pic">
+                                 <div class="p-image">
+                                   <a href="javascript:void();" class="upload-button btn iq-bg-primary">File Upload</a>
+                                   <input type="file" name="avatar" id="avatar" class="file-upload form-control form-control-solid @error('avatar') is-invalid @enderror" accept=".png, .jpg, .jpeg" 
+                    value="@if ($route == 'users.create') {{old('avatar')}} @else {{$user->avatar}} @endif" accept="image/*">
+                                </div>
+                              </div>
+                             <div class="img-extension mt-3">
+                                <div class="d-inline-block align-items-center">
+                                    <span>Only</span>
+                                   <a href="javascript:void();">.jpg</a>
+                                   <a href="javascript:void();">.png</a>
+                                   <a href="javascript:void();">.jpeg</a>
+                                   <span>allowed</span>
+                                </div>
+                             </div>
                            </div>
+                           <div class="form-group">
+                              <label>User Role:</label>
+                              <select class="form-control select2"  name="roles[]" id="selectuserrole" required>
+                              
+                                 <option value="Etudiant" >{{ 'Etudiant' }}</option>
+                                 <option value="Delegue" >{{ 'Delegue' }}</option>
+                              </select>
+                           </div>
+                     </div>
+                  </div>
+            </div>
+            <div class="col-lg-9">
+                  <div class="iq-card">
+                     <div class="iq-card-header d-flex justify-content-between">
+                        <div class="iq-header-title">
+                           <h4 class="card-title">Créer un Etudiant</h4>
+                        </div>
+                     </div>
+                     <div class="iq-card-body">
+                        <div class="new-user-info">
+                              <div class="row">
+                                <div class="form-group col-md-6">
+                                    <label for="fname">Name:</label>
+                                    <input placeholder="Your Name" type="text" class="form-control form-control-solid @error('name') is-invalid @enderror" 
+                                        name="name" id="name" value="@if($route == 'users.create'){{old('name')}}@else{{$user->name}}@endif"/>
+                                    @error('name')
+                                        <span class="form-text text-muted" role="alert"><strong class="text-danger">{{ $message }}</strong></span>
+                                    @enderror
+                                </div>
+                                <span class="form-text text-muted" role="alert"><strong class="text-danger name" ></strong></span>
+                                <div class="form-group col-md-6">
+                                    <label for="lname">Last Name:</label>
+                                    <input type="text" class="form-control form-control-solid @error('last_name') is-invalid @enderror" name="last_name" id="last_name" value="@if($route == 'users.create'){{old('last_name')}}@else{{$user->last_name}}@endif"/>
+                                    @error('last_name')
+                                        <span class="form-text text-muted" role="alert"><strong class="text-danger">{{ $message }}</strong></span>
+                                    @enderror
+                                </div>
+                                <span class="form-text text-muted" role="alert"><strong class="text-danger last_name" ></strong></span>
+                                <div class="form-group col-md-6">
+                                    <label for="phone">Phone:</label>
+                                    <input type="number" class="form-control form-control-solid @error('phone_number') is-invalid @enderror" name="phone_number" id="phone_number" value="@if($route == 'users.create'){{old('phone_number')}}@else{{$user->phone_number}}@endif" />
+                                    @error('phone_number')
+                                        <span class="form-text text-muted" role="alert"><strong class="text-danger">{{ $message }}</strong></span>
+                                    @enderror
+                                </div>
+                                <span class="form-text text-muted" role="alert"><strong class="text-danger phone_number" ></strong></span>
+                                <div class="form-group col-md-6">
+                                    <label for="email">Email:</label>
+                                    <input type="text" class="form-control form-control-solid @error('email') is-invalid @enderror" name="email" id="email" value="@if($route == 'users.create'){{old('email')}}@else{{$user->email}}@endif" />
+                                    @error('email')
+                                        <span class="form-text text-muted" role="alert"><strong class="text-danger">{{ $message }}</strong></span>
+                                    @enderror
+                                </div>
+                                <span class="form-text text-muted" role="alert"><strong class="text-danger email" ></strong></span>
+                                <div class="form-group col-md-6">
+                                    <label for="matricule">matricule:</label>
+                                    <input type="text" class="form-control form-control-solid @error('matricule') is-invalid @enderror" name="matricule" id="matricule" value="@if($route == 'users.create'){{old('matricule')}}@else{{$user->matricule}}@endif" />
+                                    @error('matricule')
+                                        <span class="form-text text-muted" role="alert"><strong class="text-danger">{{ $message }}</strong></span>
+                                    @enderror
+                                </div>
+                                <span class="form-text text-muted" role="alert"><strong class="text-danger matricule" ></strong></span>
+                                <div class="form-group col-md-6">
+                                    <label>Option:</label>
+                                    <select class="form-control select2"  name="option_id" id="selectuserrole" required>
+                                    @foreach($options as $id => $option)
+                                       <option value="{{ $option->id }}">{{ $option->name }}</option>
+                                    @endforeach
+                                    </select>
+                                </div>
+                                <span class="form-text text-muted" role="alert"><strong class="text-danger email" ></strong></span>
+                              </div>
+                              <hr>
+                              <h5 class="mb-3">Securité</h5>
+                              <div class="row">
+                                 <div class="form-group col-md-6">
+                                    <label for="pass">Password:</label>
+                                    <input type="password" class="form-control form-control-solid @error('password') is-invalid @enderror" name="password" id="password">
+                                    @error('password')
+                                        <span class="form-text text-muted" role="alert"><strong class="text-danger">{{ $message }}</strong></span>
+                                    @enderror
+                                </div>
+                                 <div class="form-group col-md-6">
+                                    <label for="rpass">Repeat Password:</label>
+                                    <input type="password" class="form-control form-control-solid" name="password_confirmation" id="password_confirmation">
+                                    <br>
+                                    <button type="submit" class="btn btn-primary">create</button>
+                              </div>
+                              
+                           </form>
                         </div>
                      </div>
                   </div>
-                  <div class="col-lg-12">
-                     <div class="iq-edit-list-data">
-                        <div class="tab-content">
-                           <div class="tab-pane fade active show" id="personal-information" role="tabpanel">
-                               <div class="iq-card">
-                                 <div class="iq-card-header d-flex justify-content-between">
-                                    <div class="iq-header-title">
-                                       <h4 class="card-title">Personal Information</h4>
-                                    </div>
-                                 </div>
-                                 <div class="iq-card-body">
-                                    <form>
-                                       <div class="form-group row align-items-center">
-                                          <div class="col-md-12">
-                                             <div class="profile-img-edit">
-                                                <img class="profile-pic" src="{{asset('images/user/11.png')}}" alt="profile-pic">
-                                                <div class="p-image">
-                                                  <i class="ri-pencil-line upload-button"></i>
-                                                  <input class="file-upload" type="file" accept="image/*"/>
-                                               </div>
-                                             </div>
-                                          </div>
-                                       </div>
-                                       <div class=" row align-items-center">
-                                          <div class="form-group col-sm-6">
-                                             <label for="fname">First Name:</label>
-                                             <input type="text" class="form-control" id="fname" value="Nik">
-                                          </div>
-                                          <div class="form-group col-sm-6">
-                                             <label for="lname">Last Name:</label>
-                                             <input type="text" class="form-control" id="lname" value="Jhon">
-                                          </div>
-                                          <div class="form-group col-sm-6">
-                                             <label for="uname">User Name:</label>
-                                             <input type="text" class="form-control" id="uname" value="Nik@01">
-                                          </div>
-                                          <div class="form-group col-sm-6">
-                                             <label for="cname">City:</label>
-                                             <input type="text" class="form-control" id="cname" value="Atlanta">
-                                          </div>
-                                          <div class="form-group col-sm-6">
-                                             <label class="d-block">Gender:</label>
-                                             <div class="custom-control custom-radio custom-control-inline">
-                                                <input type="radio" id="customRadio6" name="customRadio1" class="custom-control-input" checked="">
-                                                <label class="custom-control-label" for="customRadio6"> Male </label>
-                                             </div>
-                                             <div class="custom-control custom-radio custom-control-inline">
-                                                <input type="radio" id="customRadio7" name="customRadio1" class="custom-control-input">
-                                                <label class="custom-control-label" for="customRadio7"> Female </label>
-                                             </div>
-                                          </div>
-                                          <div class="form-group col-sm-6">
-                                             <label for="dob">Date Of Birth:</label>
-                                             <input  class="form-control" id="dob" value="1984-01-24">
-                                          </div>
-                                          <div class="form-group col-sm-6">
-                                             <label>Marital Status:</label>
-                                             <select class="form-control" id="exampleFormControlSelect1">
-                                                <option selected="">Single</option>
-                                                <option>Married</option>
-                                                <option>Widowed</option>
-                                                <option>Divorced</option>
-                                                <option>Separated </option>
-                                             </select>
-                                          </div>
-                                          <div class="form-group col-sm-6">
-                                             <label>Age:</label>
-                                             <select class="form-control" id="exampleFormControlSelect2">
-                                                <option>12-18</option>
-                                                <option>19-32</option>
-                                                <option selected="">33-45</option>
-                                                <option>46-62</option>
-                                                <option>63 > </option>
-                                             </select>
-                                          </div>
-                                          <div class="form-group col-sm-6">
-                                             <label>Country:</label>
-                                             <select class="form-control" id="exampleFormControlSelect3">
-                                                <option>Caneda</option>
-                                                <option>Noida</option>
-                                                <option selected="">USA</option>
-                                                <option>India</option>
-                                                <option>Africa</option>
-                                             </select>
-                                          </div>
-                                          <div class="form-group col-sm-6">
-                                             <label>State:</label>
-                                             <select class="form-control" id="exampleFormControlSelect4">
-                                                <option>California</option>
-                                                <option>Florida</option>
-                                                <option selected="">Georgia</option>
-                                                <option>Connecticut</option>
-                                                <option>Louisiana</option>
-                                             </select>
-                                          </div>
-                                          <div class="form-group col-sm-12">
-                                             <label>Address:</label>
-                                             <textarea class="form-control" name="address" rows="5" style="line-height: 22px;">
-37 Cardinal Lane
-Petersburg, VA 23803
-United States of America
-Zip Code: 85001
-                                             </textarea>
-                                          </div>
-                                       </div>
-                                       <button type="submit" class="btn btn-primary mr-2">Submit</button>
-                                       <button type="reset" class="btn iq-bg-danger">Cancle</button>
-                                    </form>
-                                 </div>
-                              </div>
-                           </div>
-                           <div class="tab-pane fade" id="chang-pwd" role="tabpanel">
-                               <div class="iq-card">
-                                 <div class="iq-card-header d-flex justify-content-between">
-                                    <div class="iq-header-title">
-                                       <h4 class="card-title">Change Password</h4>
-                                    </div>
-                                 </div>
-                                 <div class="iq-card-body">
-                                    <form>
-                                       <div class="form-group">
-                                          <label for="cpass">Current Password:</label>
-                                          <a href="javascripe:void();" class="float-right">Forgot Password</a>
-                                             <input type="Password" class="form-control" id="cpass" value="">
-                                          </div>
-                                       <div class="form-group">
-                                          <label for="npass">New Password:</label>
-                                          <input type="Password" class="form-control" id="npass" value="">
-                                       </div>
-                                       <div class="form-group">
-                                          <label for="vpass">Verify Password:</label>
-                                             <input type="Password" class="form-control" id="vpass" value="">
-                                       </div>
-                                       <button type="submit" class="btn btn-primary mr-2">Submit</button>
-                                       <button type="reset" class="btn iq-bg-danger">Cancle</button>
-                                    </form>
-                                 </div>
-                              </div>
-                           </div>
-                           <div class="tab-pane fade" id="emailandsms" role="tabpanel">
-                               <div class="iq-card">
-                                 <div class="iq-card-header d-flex justify-content-between">
-                                    <div class="iq-header-title">
-                                       <h4 class="card-title">Email and SMS</h4>
-                                    </div>
-                                 </div>
-                                 <div class="iq-card-body">
-                                    <form>
-                                       <div class="form-group row align-items-center">
-                                          <label class="col-md-3" for="emailnotification">Email Notification:</label>
-                                          <div class="col-md-9 custom-control custom-switch">
-                                             <input type="checkbox" class="custom-control-input" id="emailnotification" checked="">
-                                             <label class="custom-control-label" for="emailnotification"></label>
-                                          </div>
-                                       </div>
-                                       <div class="form-group row align-items-center">
-                                          <label class="col-md-3" for="smsnotification">SMS Notification:</label>
-                                          <div class="col-md-9 custom-control custom-switch">
-                                             <input type="checkbox" class="custom-control-input" id="smsnotification" checked="">
-                                             <label class="custom-control-label" for="smsnotification"></label>
-                                          </div>
-                                       </div>
-                                       <div class="form-group row align-items-center">
-                                          <label class="col-md-3" for="npass">When To Email</label>
-                                          <div class="col-md-9">
-                                             <div class="custom-control custom-checkbox">
-                                                <input type="checkbox" class="custom-control-input" id="email01">
-                                                <label class="custom-control-label" for="email01">You have new notifications.</label>
-                                             </div>
-                                             <div class="custom-control custom-checkbox">
-                                                <input type="checkbox" class="custom-control-input" id="email02">
-                                                <label class="custom-control-label" for="email02">You're sent a direct message</label>
-                                             </div>
-                                             <div class="custom-control custom-checkbox">
-                                                <input type="checkbox" class="custom-control-input" id="email03" checked="">
-                                                <label class="custom-control-label" for="email03">Someone adds you as a connection</label>
-                                             </div>
-                                          </div>
-                                       </div>
-                                       <div class="form-group row align-items-center">
-                                          <label class="col-md-3" for="npass">When To Escalate Emails</label>
-                                          <div class="col-md-9">
-                                             <div class="custom-control custom-checkbox">
-                                                <input type="checkbox" class="custom-control-input" id="email04">
-                                                <label class="custom-control-label" for="email04"> Upon new order.</label>
-                                             </div>
-                                             <div class="custom-control custom-checkbox">
-                                                <input type="checkbox" class="custom-control-input" id="email05">
-                                                <label class="custom-control-label" for="email05"> New membership approval</label>
-                                             </div>
-                                             <div class="custom-control custom-checkbox">
-                                                <input type="checkbox" class="custom-control-input" id="email06" checked="">
-                                                <label class="custom-control-label" for="email06"> Member registration</label>
-                                             </div>
-                                          </div>
-                                       </div>
-                                       <button type="submit" class="btn btn-primary mr-2">Submit</button>
-                                       <button type="reset" class="btn iq-bg-danger">Cancle</button>
-                                    </form>
-                                 </div>
-                              </div>
-                           </div>
-                           <div class="tab-pane fade" id="manage-contact" role="tabpanel">
-                               <div class="iq-card">
-                                 <div class="iq-card-header d-flex justify-content-between">
-                                    <div class="iq-header-title">
-                                       <h4 class="card-title">Manage Contact</h4>
-                                    </div>
-                                 </div>
-                                 <div class="iq-card-body">
-                                    <form>
-                                       <div class="form-group">
-                                          <label for="cno">Contact Number:</label>
-                                          <input type="text" class="form-control" id="cno" value="001 2536 123 458">
-                                       </div>
-                                       <div class="form-group">
-                                          <label for="email">Email:</label>
-                                          <input type="text" class="form-control" id="email" value="nikjone@demo.com">
-                                       </div>
-                                       <div class="form-group">
-                                          <label for="url">Url:</label>
-                                          <input type="text" class="form-control" id="url" value="https://getbootstrap.com">
-                                       </div>
-                                       <button type="submit" class="btn btn-primary mr-2">Submit</button>
-                                       <button type="reset" class="btn iq-bg-danger">Cancle</button>
-                                    </form>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
             </div>
          </div>
+      </div>
+   </div>
 @endsection

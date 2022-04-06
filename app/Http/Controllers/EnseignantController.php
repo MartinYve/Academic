@@ -18,7 +18,7 @@ class EnseignantController extends Controller
      */
     public function index()
     {
-        $enseignants = Enseignement::all();
+        $enseignants = Enseignant::all();
         return view('Enseignant.liste', compact('enseignants'));
     }
 
@@ -64,7 +64,7 @@ class EnseignantController extends Controller
         // $user->assignRole($roles);
        
         toast('User has been successfully added.','success');
-        return redirect()->route('users.index');
+        return redirect()->route('enseignant.index');
     }
 
     /**
@@ -109,6 +109,15 @@ class EnseignantController extends Controller
      */
     public function destroy($id)
     {
-        //
+        
+        $enseignant = Enseignant::select('*')->where('id' , $id)->first();
+        $user = User::select('*')->where('email' , $enseignant->email)->first();
+        $user_role = DB::table('role_user')->where('user_id',$user->id);
+        
+        $user_role->delete();
+        $user->delete();
+        $enseignant->delete();
+        toast('Enseignant a été supprimé avec success !','success');
+        return back();
     }
 }
