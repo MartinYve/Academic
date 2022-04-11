@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Enseignant;
 use App\Enseignement;
+use App\Option;
 use App\Role;
 use App\User;
 use Illuminate\Http\Request;
@@ -86,7 +87,9 @@ class EnseignantController extends Controller
      */
     public function edit($id)
     {
-        //
+        $options = Option::all() ;
+        $enseignant = Enseignant::select('*')->where('id' , $id)->first();
+        return view('Enseignant.edit', compact('enseignant','options'));
     }
 
     /**
@@ -98,7 +101,23 @@ class EnseignantController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $user = User::select('*')->where('id' , $id)->first();
+        $enseignant = Enseignant::select('*')->where('id',$id)->first();
+        $request->validate([
+            'name' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255'],
+            'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'last_name' => ['required', 'string', 'max:255'],
+            'matricule' => ['required', 'string', 'max:255'],
+            'statut' => ['required'],
+            'phone_number' => ['required', 'numeric'],
+            'avatar' => 'sometimes|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
+        ]);
+        $user->update($request->all());
+        $enseignant->update($request->all());
+        toast(trans('Enseignant'.$enseignant->name.'a bien été supprimé'), 'success');
+
+        return redirect()->route('enseignant.index');
     }
 
     /**

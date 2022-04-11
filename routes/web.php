@@ -25,3 +25,4 @@ Route::middleware('auth')->resource('users', UserController::class);
 Route::middleware('auth')->resource('Enseignements', EnseignementController::class);
 Route::middleware('auth')->resource('periodes', PeriodeController::class);
 Route::middleware('auth')->resource('enseignant', EnseignantController::class);
+Route::middleware('auth')->resource('Emploistemps', EmploistempsController::class);

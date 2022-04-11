@@ -57,12 +57,6 @@ foreach ($uu as $key => $value) {
                            </ul>
                         </li>
                         <li>
-                           <a href="#userinfo4" class="iq-waves-effect collapsed" data-toggle="collapse" aria-expanded="false"><i class="ri-pie-chart-box-line"></i><span>Periode</span><i class="ri-arrow-right-s-line iq-arrow-right"></i></a>
-                           <ul id="userinfo4" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
-                              <li><a href="{{route('periodes.create')}}"><i class="ri-profile-line"></i>Ajouté</a></li>
-                           </ul>
-                        </li>
-                        <li>
                            <a href="#userinfo3" class="iq-waves-effect collapsed" data-toggle="collapse" aria-expanded="false"><i class="ri-pie-chart-box-line"></i><span>Enseignants</span><i class="ri-arrow-right-s-line iq-arrow-right"></i></a>
                            <ul id="userinfo3" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
                               <li><a href="{{route('enseignant.index')}}"><i class="ri-profile-line"></i>List</a></li>
@@ -70,6 +64,7 @@ foreach ($uu as $key => $value) {
                               <li><a href="profile.html"><i class="ri-profile-line"></i>Publié un cours</a></li>
                            </ul>
                         </li>
+                        <li><a href="{{route('Emploistemps.index')}}" class="iq-waves-effect" aria-expanded="false"><i class="ri-chat-check-line"></i><span>Cahier de text</span></a></li>
                      @endif
                      @if($value == "Delivery_person")
                         <li><a href="" class="iq-waves-effect" aria-expanded="false"><i class="ri-chat-check-line"></i><span>Change order statuts</span></a></li>

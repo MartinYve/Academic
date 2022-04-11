@@ -134,7 +134,13 @@
                                     <td>{{ $enseignement->name }}</td>
                                     <td>{{ $enseignement->credit }}</td>
                                     <td>{{ $comment->name }}</td>
-                                    <td></td>
+                                    <td>
+                                        @foreach ($enseignement->periodes as $key => $value)
+                                            @foreach ($value->jours as $key2 => $aff)
+                                                {{$aff->jour}} {{$value->heure_dep}} / {{$value->heure_fin}}
+                                            @endforeach
+                                        @endforeach
+                                    </td>
                                     <td>
                                         <a href="{{ route('Enseignements.edit', $enseignement->id )}}"
                                             class="btn btn-sm btn-primary btn-icon mr-2" title="@lang('Edit details')">

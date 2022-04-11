@@ -13,7 +13,7 @@ class ClassSeeder extends Seeder
     public function run()
     {
         Jour::create([
-            'jour' => 'Lundi ',
+            'jour' => 'Lundi',
         ]);
         Jour::create([
             'jour' => 'Mardi',

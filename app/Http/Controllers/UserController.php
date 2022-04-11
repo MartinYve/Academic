@@ -18,6 +18,7 @@ class UserController extends Controller
      */
     public function index()
     {
+        $options = Option::all() ;
         $new_etudiant = [] ;
         $role = Role::select('*')->where('name' , 'Etudiant')->get()->toArray();
         // dd($role) ;
@@ -29,7 +30,7 @@ class UserController extends Controller
         };
         // dd($new_etudiant) ;
         $users = User::whereIn('id' , $new_etudiant)->get();
-        return view('users.list', compact('users'));
+        return view('users.list', compact('users','options'));
     }
 
     /**
@@ -122,6 +123,7 @@ class UserController extends Controller
         $user_role->delete();
         $roles = $request->input('roles') ? $request->input('roles') : [];   
         $id_role = Role::select('id')->where('name', $roles)->get()->first()->toArray();   
+        
         $id = DB::table('role_user')->latest('id')->first();
         foreach ($id_role as $key => $value) {
             DB::insert('insert into role_user(id, user_id, role_id) values(?,?,?)', [$id->id + 1,$user->id, $value]);

@@ -83,6 +83,14 @@
   <script src="{{asset('js/google-map.js')}}"></script>
   <script src="{{asset('js/main.js')}}"></script>
 
+
+
+
+
+
+
+
+
   @if(Route::is('Login')) 
     <script src="{{('log/js/jquery-3.3.1.min.js')}}"></script>
     <script src="{{('log/js/popper.min.js')}}"></script>

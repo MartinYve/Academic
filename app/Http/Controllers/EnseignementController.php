@@ -20,6 +20,7 @@ class EnseignementController extends Controller
      */
     public function index()
     {
+        $options = Option::all() ;
         $enseignement_id = [] ;
         $enseignements = Enseignement::all();
         $enseignementss = Enseignement::all()->toArray();
@@ -34,7 +35,7 @@ class EnseignementController extends Controller
         $enseignement_per = Enseignement::whereNotIn('id' , $enseignement_id)->get() ;
         // dd($enseignement_per);
         $jours = Jour::all();
-        return view('Enseignements.liste', compact('enseignements', 'enseignementss' , 'jours' , 'enseignement_per'));
+        return view('Enseignements.liste', compact('options','enseignements', 'enseignementss' , 'jours' , 'enseignement_per'));
     }
 
     /**
@@ -85,7 +86,7 @@ class EnseignementController extends Controller
             foreach ($option_id as $key2 => $id) {
                foreach ($credits as $key3 => $credit) {
                 foreach ($enseignement_id as $key4 => $enseignement) {
-                    if ($key1 == $key2 && $key1==$key3 && $key1 == $key3) {
+                    if ($key1 == $key2 && $key1==$key3 && $key1 == $key4) {
                         DB::table('enseignements')->insert([
                             'option_id' => $id,
                             'enseignant_id' => $enseignement,

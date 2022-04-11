@@ -86,5 +86,6 @@
       <script async src="{{asset('back/js/chart-custom.js')}}"></script>
       <!-- Custom JavaScript -->
       <script src="{{asset('back/js/custom.js')}}"></script>
+      
 </body>
 </html>
