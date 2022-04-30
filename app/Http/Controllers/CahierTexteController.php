@@ -2,10 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Option;
 use Illuminate\Http\Request;
 
-class CahierTextController extends Controller
+class CahierTexteController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -24,7 +23,7 @@ class CahierTextController extends Controller
      */
     public function create()
     {
-    //    
+        //
     }
 
     /**

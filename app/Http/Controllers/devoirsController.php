@@ -2,13 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Jour;
-use App\Periode;
-use App\User;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 
-class PeriodeController extends Controller
+class devoirsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -38,25 +34,7 @@ class PeriodeController extends Controller
      */
     public function store(Request $request)
     {
-        $heure_dep = $request->heure_dep;
-        $heure_fin = $request->heure_fin;
-        $enseignement = $request->enseignement;
-        $jour = $request->jour ;
-        // $jour_id = Jour::select('id')->where('jour' , $jour)->first();
-        // dd($jour) ;
-        $periode = Periode::create([
-            'Enseignement_id' => $enseignement,
-            'heure_dep' => $heure_dep,
-            'heure_fin' => $heure_fin
-        ]);
-       
-        // dd($periode->id);
-        $periode = DB::table('jour_periode')->insert([
-            'jour_id' => $jour,
-            'periode_id' => $periode->id
-        ]);
-        toast('la periode a été ajouté avec success`.','success');
-        return redirect()->route('Enseignements.index');
+        //
     }
 
     /**

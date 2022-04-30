@@ -22,4 +22,12 @@ class Enseignant extends Model
     {
         return $this->hasMany(\App\Enseignement::class);
     }
+    public function cous()
+    {
+        return $this->hasMany(\App\cours::class);
+    }
+    public function devoirs()
+    {
+        return $this->hasMany(\App\devoirs::class);
+    }
 }

@@ -61,13 +61,15 @@ foreach ($uu as $key => $value) {
                            <ul id="userinfo3" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
                               <li><a href="{{route('enseignant.index')}}"><i class="ri-profile-line"></i>List</a></li>
                               <li><a href="{{route('enseignant.create')}}"><i class="ri-user-line"></i>Ajouté</a></li>
-                              <li><a href="profile.html"><i class="ri-profile-line"></i>Publié un cours</a></li>
                            </ul>
                         </li>
                         <li><a href="{{route('Emploistemps.index')}}" class="iq-waves-effect" aria-expanded="false"><i class="ri-chat-check-line"></i><span>Emplois de temps</span></a></li>
                      @endif
-                     @if($value == "Delivery_person")
-                        <li><a href="" class="iq-waves-effect" aria-expanded="false"><i class="ri-chat-check-line"></i><span>Change order statuts</span></a></li>
+                     @if($value == "Enseignant")
+                        <li><a href="{{route('Emploistemps.index')}}" class="iq-waves-effect" aria-expanded="false"><i class="ri-chat-check-line"></i><span>Emplois de temps</span></a></li>
+                        <li><a href="{{route('CahierTexte.index')}}" class="iq-waves-effect" aria-expanded="false"><i class="ri-chat-check-line"></i><span>Cahier de Texte</span></a></li>
+                        <li><a href="{{route('cours.index')}}" class="" aria-expanded="false"><i class="ri-chat-check-line"></i><span>Créer un cours</span></a></li>
+                        <li><a href="{{route('devoirs.index')}}" class="" aria-expanded="false"><i class="ri-chat-check-line"></i><span>Créer un devoir</span></a></li>
                      @endif
                      @if($value == "customer")
                         <li><a href="" class="iq-waves-effect" aria-expanded="false"><i class="ri-chat-check-line"></i><span>Orders list</span></a></li>

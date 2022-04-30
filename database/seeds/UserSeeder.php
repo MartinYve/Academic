@@ -15,15 +15,75 @@ class UserSeeder extends Seeder
     public function run()
     {
         $user1 = User::create([
-            'name' => 'Koue ',
+            'name' => 'Koue',
             'last_name' => 'Martin',
             'matricule' => 'G-124356',
-            'option_id' => 1 ,
-            'email' => 'kouesilas@gmail.com',
+            'option_id' => 11 ,
+            'email' => 'kouesilas2@gmail.com',
             'phone_number' => '656867655',
             'password' => Hash::make('password'),
             'avatar' => 'avatar.png', 
         ]);
         DB::insert('insert into role_user(id, user_id, role_id) values(?,?,?)', [1,$user1->id,1]);
+        $user1 = User::create([
+            'name' => 'Enseignant',
+            'last_name' => 'Yvan',
+            'matricule' => 'E-23456',
+            'option_id' => 11 ,
+            'email' => 'Enseignant@gmail.com',
+            'phone_number' => '683080739',
+            'password' => Hash::make('password'),
+            'avatar' => 'avatar.png', 
+        ]);
+        DB::insert('insert into role_user(id, user_id, role_id) values(?,?,?)', [2,$user1->id,2]);
+
+
+
+
+        $user3 = User::create([
+            'name' => 'MARTIN',
+            'last_name' => 'YVE',
+            'matricule' => 'Y-124356',
+            'option_id' => 1 ,
+            'email' => 'matchidaelois@gmail.com',
+            'phone_number' => '683080739',
+            'password' => Hash::make('password'),
+            'avatar' => 'avatar.png', 
+        ]);
+        DB::insert('insert into role_user(id, user_id, role_id) values(?,?,?)', [3,$user3->id,3]);
+        $user4 = User::create([
+            'name' => 'ETUDIANT',
+            'last_name' => 'Ines',
+            'matricule' => 'H-23456',
+            'option_id' => 1 ,
+            'email' => 'kouesilas@gmail.com',
+            'phone_number' => '683080739',
+            'password' => Hash::make('password'),
+            'avatar' => 'avatar.png', 
+        ]);
+        DB::insert('insert into role_user(id, user_id, role_id) values(?,?,?)', [4,$user4->id,3]);
+
+        $user5 = User::create([
+            'name' => 'Brinda',
+            'last_name' => 'Zoe',
+            'matricule' => 'U-23456',
+            'option_id' => 1 ,
+            'email' => 'brindapindo@gmail.com',
+            'phone_number' => '683080739',
+            'password' => Hash::make('password'),
+            'avatar' => 'avatar.png', 
+        ]);
+        DB::insert('insert into role_user(id, user_id, role_id) values(?,?,?)', [5,$user5->id,3]);
+        $user6 = User::create([
+            'name' => 'Brinda',
+            'last_name' => 'Zoe',
+            'matricule' => 'U-23456',
+            'option_id' => 1 ,
+            'email' => 'mbockjosias8@gmail.com',
+            'phone_number' => '683080739',
+            'password' => Hash::make('password'),
+            'avatar' => 'avatar.png', 
+        ]);
+        DB::insert('insert into role_user(id, user_id, role_id) values(?,?,?)', [6,$user6->id,3]);
     }
 }

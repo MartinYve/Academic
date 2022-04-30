@@ -21,8 +21,11 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::middleware('auth')->resource('users', UserController::class);
-Route::middleware('auth')->resource('Enseignements', EnseignementController::class);
-Route::middleware('auth')->resource('periodes', PeriodeController::class);
-Route::middleware('auth')->resource('enseignant', EnseignantController::class);
+Route::middleware('auth' , 'admin')->resource('users', UserController::class);
+Route::middleware('auth' , 'admin')->resource('Enseignements', EnseignementController::class);
+Route::middleware('auth' , 'admin')->resource('periodes', PeriodeController::class);
+Route::middleware('auth' , 'admin')->resource('enseignant', EnseignantController::class);
 Route::middleware('auth')->resource('Emploistemps', EmploistempsController::class);
+Route::middleware('auth' , 'enseignant')->resource('cours', coursController::class);
+Route::middleware('auth' , 'enseignant')->resource('devoirs', devoirsController::class);
+Route::middleware('auth')->resource('CahierTexte', CahierTexteController::class);

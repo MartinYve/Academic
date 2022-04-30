@@ -9,6 +9,7 @@ use App\Role;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 
 class EnseignantController extends Controller
 {
@@ -52,7 +53,15 @@ class EnseignantController extends Controller
             'avatar' => 'sometimes|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
         ]);
         $user = User::create($request->all());
-        Enseignant::create($request->all()) ;
+        $enseignant = Enseignant::create($request->all()) ;
+        $pass = Hash::make($user->password);
+        $pass2 = Hash::make($enseignant->password);
+        Enseignant::where('id' , $enseignant->id)->update([
+            'password' => $pass2 
+        ]);
+        User::where('id' , $user->id)->update([
+            'password' => $pass 
+        ]);
         // dd('pass');
         
         $roles = $request->input('roles') ? $request->input('roles') : [];   

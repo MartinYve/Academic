@@ -8,6 +8,7 @@ use App\Role;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
@@ -59,8 +60,13 @@ class UserController extends Controller
             'last_name' => ['required', 'string', 'max:255'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
-
+       
         $user = User::create($request->all());
+        $pass = Hash::make($user->password);
+        User::where('id' , $user->id)->updated([
+            'password' => $pass 
+        ]);
+       
         // dd('pass');
         
         $roles = $request->input('roles') ? $request->input('roles') : [];   
@@ -71,7 +77,7 @@ class UserController extends Controller
         }
         
         // $user->assignRole($roles);
-        toast('User has been successfully added.','success');
+        toast('Utilisateur à bien été créé.','success');
         return redirect()->route('users.index');
     }
 
