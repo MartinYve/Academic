@@ -63,7 +63,7 @@ class UserController extends Controller
        
         $user = User::create($request->all());
         $pass = Hash::make($user->password);
-        User::where('id' , $user->id)->updated([
+        User::where('id' , $user->id)->update([
             'password' => $pass 
         ]);
        
