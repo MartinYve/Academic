@@ -73,7 +73,7 @@ class EnseignantController extends Controller
         
         // $user->assignRole($roles);
        
-        toast('User has been successfully added.','success');
+        toast('Enseignant à été crée avec success.','success');
         return redirect()->route('enseignant.index');
     }
 
@@ -140,6 +140,7 @@ class EnseignantController extends Controller
         
         $enseignant = Enseignant::select('*')->where('id' , $id)->first();
         $user = User::select('*')->where('email' , $enseignant->email)->first();
+        dd($user);
         $user_role = DB::table('role_user')->where('user_id',$user->id);
         
         $user_role->delete();

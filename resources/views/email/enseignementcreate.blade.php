@@ -16,7 +16,7 @@
 										</tr>
 										<tr>
 											<td style="padding-bottom: 5px; padding-left: 20px; padding-right: 20px;" align="center" valign="top" class="mainTitle">
-												<h2 class="text" style="color:#000;font-family:Poppins,Helvetica,Arial,sans-serif;font-size:28px;font-weight:500;font-style:normal;letter-spacing:normal;line-height:36px;text-transform:none;text-align:center;padding:0;margin:0">Bonjour {{$etudiant['name']}}</h2>
+												<h2 class="text" style="color:#000;font-family:Poppins,Helvetica,Arial,sans-serif;font-size:28px;font-weight:500;font-style:normal;letter-spacing:normal;line-height:36px;text-transform:none;text-align:center;padding:0;margin:0">Bonjour Mr/Mme {{$ensei}}</h2>
 											</td>
 										</tr>
 										<tr>
@@ -25,23 +25,7 @@
 													<tbody>
 														<tr>
 															<td style="padding-bottom: 20px;" align="center" valign="top" class="description">
-																<p class="text" style="color:#666;font-family:'Open Sans',Helvetica,Arial,sans-serif;font-size:14px;font-weight:400;font-style:normal;letter-spacing:normal;line-height:22px;text-transform:none;text-align:center;padding:0;margin:0">Un cour à été publié <br> Clic sur le bouton suivant pour vérifier le cour</p>
-															</td>
-														</tr>
-													</tbody>
-												</table>
-												<table border="0" cellpadding="0" cellspacing="0" width="100%" class="tableButton" style="">
-													<tbody>
-														<tr>
-															<td style="padding-top:20px;padding-bottom:20px" align="center" valign="top">
-																<table border="0" cellpadding="0" cellspacing="0" align="center">
-																	<tbody>
-																		<tr>
-																			<td style="background-color: #3d8afd; padding: 12px 35px;" align="center" class="ctaButton"> <a href="{{ route('cours.edit', $id) }}" style="color:#fff;font-family:Poppins,Helvetica,Arial,sans-serif;font-size:13px;font-weight:600;font-style:normal;letter-spacing:1px;line-height:20px;text-transform:uppercase;text-decoration:none;display:block" class="text">Voir le cour</a>
-																			</td>
-																		</tr>
-																	</tbody>
-																</table>
+																<p class="text" style="color:#666;font-family:'Open Sans',Helvetica,Arial,sans-serif;font-size:14px;font-weight:400;font-style:normal;letter-spacing:normal;line-height:22px;text-transform:none;text-align:center;padding:0;margin:0">Le cours <strong>{{$name}}</strong> <br> vous à été attribué en {{$option}}.</p>
 															</td>
 														</tr>
 													</tbody>

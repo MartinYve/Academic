@@ -7,9 +7,9 @@
 	      <div class="collapse navbar-collapse" id="ftco-nav">
 	        <ul class="navbar-nav ml-auto">
 	        	<li class="nav-item active"><a href="{{route('welcome')}}" class="nav-link pl-0">Accueil</a></li>
-	        	<li class="nav-item"><a href="teacher.html" class="nav-link">Professeur</a></li>
-	        	<li class="nav-item"><a href="courses.html" class="nav-link">Cours</a></li>
-	          	<li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+	        	<li class="nav-item"><a href="{{route('professeurs')}}" class="nav-link">professeurs</a></li>
+	        	<li class="nav-item"><a href="{{route('cour')}}" class="nav-link">Cours</a></li>
+	          	<li class="nav-item"><a href="{{route('contact')}}" class="nav-link">Contact</a></li>
                 <li class="nav-item">
 				<a href="{{route('login')}}" class="btn btn-primary px-4 py-2 mt-4">Login</a>
 				<!-- <a href="{{route('login')}}" style = "  " class="nav-link login btn btn-primary px-4 py-2 mt-4"><i class="bi bi-person-circle me-2"></i>Login</a> -->

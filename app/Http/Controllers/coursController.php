@@ -76,9 +76,7 @@ class coursController extends Controller
            Mail::to($email)->send(new CourMail($etudiant, $id));
            
        }
-       // dd($etudiant) ;
 
-             // dd($request->email);
        toast('le cours '.$cour->cour.' à bien été publié','success');
        return view('Enseignant.Couroption');
     }
