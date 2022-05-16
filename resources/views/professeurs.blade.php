@@ -32,8 +32,9 @@ use Illuminate\Support\Facades\DB; ?>
 								<h3>{{$enseignant->name}}</h3>
                                 <?php
                                     $enseignement = DB::table('enseignements')->select('name')->where('enseignant_id' , $enseignant->id)->first();
+                                    
                                 ?>
-								<span class="position mb-2">Enseignant {{$enseignement->name}}</span>
+								<span class="position mb-2"> @if(!empty($enseignement->name) == null) Pas d'enseignementt @else Enseignant de {{$enseignement->name}} @endif </span>
 								<div class="faded">
 									<p>I am an ambitious workaholic, but apart from that, pretty simple person.</p>
 									<ul class="ftco-social text-center">
