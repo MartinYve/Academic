@@ -5,11 +5,13 @@ namespace App\Http\Controllers;
 use App\Enseignant;
 use App\Enseignement;
 use App\Jour;
+use App\Mail\enseignantCreate;
 use App\Option;
 use App\Periode;
 use App\Role;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Mail;
 
 class EnseignementController extends Controller
 {
@@ -93,6 +95,11 @@ class EnseignementController extends Controller
                             'name' => $name,
                             'credit' => $credit
                         ]);
+                        $enseignantt = DB::table('enseignants')->select('name' , 'email')->where('id' , $enseignement)->first();
+                        $opt = DB::table('options')->select('name')->where('id' , $id)->first();
+                        $ensei = $enseignantt->name ;
+                        $option = $opt->name ;
+                        Mail::to($enseignantt->email)->send(new enseignantCreate($name , $ensei , $option));
                        }
                 }
                }

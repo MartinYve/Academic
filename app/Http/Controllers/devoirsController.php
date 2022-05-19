@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Enseignement;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class devoirsController extends Controller
 {
@@ -13,7 +16,15 @@ class devoirsController extends Controller
      */
     public function index()
     {
-        //
+        $user_email = Auth::user()->email;
+        $enseignant = DB::table('enseignants')->select('id')->where('email' , $user_email)->first();
+         foreach ($enseignant as $key => $value) {
+             $enseignant_id = $value ;
+         }
+     //    dd($enseignant_id) ;
+        $enseignements = Enseignement::select('*')->where('enseignant_id' , $enseignant_id)->get();
+     //    dd($enseignements) ;
+        return view('Enseignant.cours', compact('enseignements'));
     }
 
     /**

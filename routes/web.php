@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Middleware\enseignant;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,6 +22,21 @@ Route::get('/', function () {
 
 Auth::routes();
 
+Route::get('/professeurs', function () {
+    $enseignants = DB::table('enseignants')->select('*')->get()->toArray() ;
+    return view('professeurs')->with('enseignants' , $enseignants);
+})->name('professeurs');
+
+
+
+Route::get('/contact', function () {
+    return view('contact');
+})->name('contact');
+
+Route::get('/cour', function () {
+    return view('cours');
+})->name('cour');
+
 Route::get('/home', 'HomeController@index')->name('home');
 Route::middleware('auth' , 'admin')->resource('users', UserController::class);
 Route::middleware('auth' , 'admin')->resource('Enseignements', EnseignementController::class);
@@ -29,3 +46,4 @@ Route::middleware('auth')->resource('Emploistemps', EmploistempsController::clas
 Route::middleware('auth' , 'enseignant')->resource('cours', coursController::class);
 Route::middleware('auth' , 'enseignant')->resource('devoirs', devoirsController::class);
 Route::middleware('auth')->resource('CahierTexte', CahierTexteController::class);
+

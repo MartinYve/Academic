@@ -36,8 +36,8 @@
 						<span class="flaticon-teacher"></span>
 				</div>
 				<div class="media-body p-2 mt-3">
-					<h3 class="heading">Certified Teachers</h3>
-					<p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic.</p>
+					<h3 class="heading">Professeurs</h3>
+					<p>Les professeurs enregistré dans Academia sont tous diplomé de grand universités et ont une grande expertise dans le domaine de enseignement.</p>
 				</div>
 				</div>      
 			</div>
@@ -47,8 +47,8 @@
 						<span class="flaticon-reading"></span>
 				</div>
 				<div class="media-body p-2 mt-3">
-					<h3 class="heading">Special Education</h3>
-					<p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic.</p>
+					<h3 class="heading">Librairie</h3>
+					<p>Academia mets a la disposition des étudiants un ensemble de cours, pourqu'ils puissent avoir des base sur un domaine avant le passage d'un cours.</p>
 				</div>
 				</div>    
 			</div>
@@ -58,8 +58,8 @@
 						<span class="flaticon-books"></span>
 				</div>
 				<div class="media-body p-2 mt-3">
-					<h3 class="heading">Book &amp; Library</h3>
-					<p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic.</p>
+					<h3 class="heading">Dévelopement</h3>
+					<p>Academia permet de rendre numéro le fonctionnement globale d'une université, a savoir : La gestion des cours/Devoir , le remplissage du cahier de texte etc....</p>
 				</div>
 				</div>      
 			</div>
@@ -70,7 +70,7 @@
 				</div>
 				<div class="media-body p-2 mt-3">
 					<h3 class="heading">Certification</h3>
-					<p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic.</p>
+					<p>Les étudiants inscrit dans Academia sont tous des étudiants de ENSET de douala, des futur professeur.</p>
 				</div>
 				</div>      
 			</div>

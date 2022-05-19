@@ -15,7 +15,7 @@
                         <div class="iq-card">
                             <div class="iq-card-header d-flex justify-content-between">
                                 <div class="iq-header-title">
-                                    <h4 class="card-title">Créer un cours</h4>
+                                    <h4 class="card-title"> @if ($route == 'cours.index') Créer un cours @elseif($route == 'devoirs.index') Créer un devoir</h4>
                                 </div>
                                 </div>
                                     <div class="iq-card-body">
