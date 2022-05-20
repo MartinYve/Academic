@@ -7,12 +7,14 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 use PhpParser\Node\Expr\Cast\String_;
+use Symfony\Component\VarDumper\Cloner\Data;
 
-class CourMail extends Mailable
+class DevoirMail extends Mailable
 {
     use Queueable, SerializesModels;
     public $etudiant ;
     public $id ;
+    public $date ;
     public $name ;
 
     /**
@@ -20,11 +22,12 @@ class CourMail extends Mailable
      *
      * @return void
      */
-    public function __construct(Array $etudiant , String $id , String $name)
+    public function __construct(Array $etudiant , String $id, Data $date, String $name)
     {
         $this->etudiant = $etudiant ;
         $this->id = $id ;
-        $this->name = $name ;
+        $this->date = $date;
+        $this->name = $name;
     }
 
     /**
@@ -34,10 +37,11 @@ class CourMail extends Mailable
      */
     public function build()
     {
-        return $this->from('academiaenset@gmail.com')->view('email.courmail', [
+        return $this->from('academiaenset@gmail.com')->view('email.devoirmail', [
             'etudiant' => $this->etudiant,
             'id' => $this->id ,
-            'name' => $this->name,
+            'date' => $this->date ,
+            'name' => $this->name ,
         ]);
     }
 }

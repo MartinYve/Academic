@@ -15,6 +15,11 @@ class CreateCahiertextsTable extends Migration
     {
         Schema::create('cahiertexts', function (Blueprint $table) {
             $table->id();
+            $table->string('jour');
+            $table->string('heure');
+            $table->string('enseignant');
+            $table->string('enseignement');
+            $table->string('contenu');
             $table->timestamps();
         });
     }

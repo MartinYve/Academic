@@ -85,5 +85,17 @@ class UserSeeder extends Seeder
             'avatar' => 'avatar.png', 
         ]);
         DB::insert('insert into role_user(id, user_id, role_id) values(?,?,?)', [6,$user6->id,3]);
+
+        $user6 = User::create([
+            'name' => 'Delegue',
+            'last_name' => 'new',
+            'matricule' => 'U-23456',
+            'option_id' => 1 ,
+            'email' => 'mbockjosias82@gmail.com',
+            'phone_number' => '683080739',
+            'password' => Hash::make('password'),
+            'avatar' => 'avatar.png', 
+        ]);
+        DB::insert('insert into role_user(id, user_id, role_id) values(?,?,?)', [7,$user6->id,4]);
     }
 }

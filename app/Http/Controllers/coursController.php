@@ -52,6 +52,7 @@ class coursController extends Controller
     public function store(Request $request)
     {
         $user_email = Auth::user()->email;
+        $name = Auth::user()->name ;
         $enseignant = DB::table('enseignants')->select('id')->where('email' , $user_email)->first();
          foreach ($enseignant as $key => $value) {
              $enseignant_id = $value ;
@@ -73,7 +74,7 @@ class coursController extends Controller
          
        foreach ($etudiants as $key => $etudiant) {
            $email = $etudiant['email'] ;
-           Mail::to($email)->send(new CourMail($etudiant, $id));
+           Mail::to($email)->send(new CourMail($etudiant, $id , $name));
            
        }
 

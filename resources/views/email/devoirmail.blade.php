@@ -25,7 +25,7 @@
 													<tbody>
 														<tr>
 															<td style="padding-bottom: 20px;" align="center" valign="top" class="description">
-																<p class="text" style="color:#666;font-family:'Open Sans',Helvetica,Arial,sans-serif;font-size:14px;font-weight:400;font-style:normal;letter-spacing:normal;line-height:22px;text-transform:none;text-align:center;padding:0;margin:0">Mr/Mme {{$name}} a publié un cours<br> Clic sur le bouton suivant pour vérifier le cour</p>
+																<p class="text" style="color:#666;font-family:'Open Sans',Helvetica,Arial,sans-serif;font-size:14px;font-weight:400;font-style:normal;letter-spacing:normal;line-height:22px;text-transform:none;text-align:center;padding:0;margin:0">Mr/Mme {{$name}} a publié un devoir <br> Clic sur le bouton suivant pour vérifier le cour</p>
 															</td>
 														</tr>
 													</tbody>
@@ -42,6 +42,24 @@
 																		</tr>
 																	</tbody>
 																</table>
+															</td>
+														</tr>
+													</tbody>
+												</table>
+                                                <table border="0" cellpadding="0" cellspacing="0" width="100%" class="tableDescription" style="">
+													<tbody>
+														<tr>
+															<td style="padding-bottom: 20px;" align="center" valign="top" class="description">
+																<p class="text" style="color:#666;font-family:'Open Sans',Helvetica,Arial,sans-serif;font-size:14px;font-weight:400;font-style:normal;letter-spacing:normal;line-height:22px;text-transform:none;text-align:center;padding:0;margin:0">Le delai pour ce devoir est le : {{$date}}</p>
+															</td>
+														</tr>
+													</tbody>
+												</table>
+                                                <table border="0" cellpadding="0" cellspacing="0" width="100%" class="tableDescription" style="">
+													<tbody>
+														<tr>
+															<td style="padding-bottom: 20px;" align="center" valign="top" class="description">
+																<p class="text" style="color:#666;font-family:'Open Sans',Helvetica,Arial,sans-serif;font-size:14px;font-weight:400;font-style:normal;letter-spacing:normal;line-height:22px;text-transform:none;text-align:center;padding:0;margin:0">{{$name}}</p>
 															</td>
 														</tr>
 													</tbody>
