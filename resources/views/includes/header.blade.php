@@ -8,29 +8,8 @@ foreach ($uu as $key => $value) {
 
 ?>
 <div class="iq-sidebar">
-            <div class="iq-sidebar-logo d-flex justify-content-between">
-               <a href="index.html">
-               <div class="iq-light-logo">
-                  <div class="iq-light-logo">
-                     <!-- <img src="" style="height: 50px; width:50px; " class="img-fluid" alt=""> -->
-                   </div>
-                     <div class="iq-dark-logo">
-                        <!-- <img src="" style="height: 100px; width:100px; " class="img-fluid" alt=""> -->
-                     </div>
-               </div>
-               <div class="iq-dark-logo">
-                  <!-- <img src="" style="height: 100px; width:100px; " class="img-fluid" alt=""> -->
-               </div>
-               <h2 style="color: var(--iq-body-text);">Academic</h2>
-               </a>
-               <div class="iq-menu-bt-sidebar">
-                  <div class="iq-menu-bt align-self-center">
-                     <div class="wrapper-menu">
-                        <div class="main-circle"><i class="ri-arrow-left-s-line"></i></div>
-                        <div class="hover-circle"><i class="ri-arrow-right-s-line"></i></div>
-                     </div>
-                  </div>
-               </div>
+            <div class="">            
+               <img alt="" border="0" src="{{asset('images/logo.png')}}"  width="170" height="70" >
             </div>
             <div id="sidebar-scrollbar">
                <nav class="iq-sidebar-menu">
@@ -68,11 +47,11 @@ foreach ($uu as $key => $value) {
                      @if($value == "Enseignant")
                         <li><a href="{{route('Emploistemps.index')}}" class="iq-waves-effect" aria-expanded="false"><i class="ri-chat-check-line"></i><span>Emplois de temps</span></a></li>
                         <li><a href="{{route('CahierTexte.index')}}" class="iq-waves-effect" aria-expanded="false"><i class="ri-chat-check-line"></i><span>Cahier de Texte</span></a></li>
-                        <li><a href="{{route('cours.index')}}" class="" aria-expanded="false"><i class="ri-chat-check-line"></i><span>Créer un cours</span></a></li>
-                        <li><a href="{{route('devoirs.index')}}" class="" aria-expanded="false"><i class="ri-chat-check-line"></i><span>Créer un devoir</span></a></li>
+                        <li><a href="{{route('cours.index')}}" class="" aria-expanded="false"><i class="ri-chat-check-line"></i><span>Créer un cours/devoir</span></a></li>
+                        <li><a href="{{route('CahierTexte.create')}}" class="iq-waves-effect" aria-expanded="false"><i class="ri-chat-check-line"></i><span>Cahier de texte</span></a></li>
                      @endif
-                     @if($value == "customer")
-                        <li><a href="" class="iq-waves-effect" aria-expanded="false"><i class="ri-chat-check-line"></i><span>Orders list</span></a></li>
+                     @if($value == "Delegue")
+                        <li><a href="{{route('CahierTexte.index')}}" class="iq-waves-effect" aria-expanded="false"><i class="ri-chat-check-line"></i><span>Remplir le cahier de texte</span></a></li>
                      @endif
                   </ul>
                </nav>
@@ -287,6 +266,12 @@ foreach ($uu as $key => $value) {
                         </li>
                      </ul>
                   </div>
+
+
+
+
+                  
+
                   <ul class="navbar-list">
                      <li>
                         <a href="#" class="search-toggle iq-waves-effect d-flex align-items-center bg-primary rounded">
