@@ -24,7 +24,7 @@
                            <div class="d-flex d-flex align-items-center justify-content-between">
                               <div>
                                   <h2>32%</h2>
-                                  <p class="fontsize-sm m-0">Enseignements Vacataires</p>
+                                  <p class="fontsize-sm m-0">Enseignants Vacataires</p>
                               </div>
                               <div class="rounded-circle iq-card-icon iq-bg-danger"><i class="ri-radar-line"></i></div>
                            </div>
@@ -37,7 +37,7 @@
                            <div class="d-flex d-flex align-items-center justify-content-between">
                               <div>
                                   <h2>32%</h2>
-                                  <p class="fontsize-sm m-0">Enseignements Titulaire</p>
+                                  <p class="fontsize-sm m-0">Enseignants Titulaires</p>
                               </div>
                               <div class="rounded-circle iq-card-icon iq-bg-warning "><i class="ri-price-tag-3-line"></i></div>
                            </div>
@@ -50,7 +50,7 @@
                            <div class="d-flex d-flex align-items-center justify-content-between">
                               <div>
                                   <h2>32%</h2>
-                                  <p class="fontsize-sm m-0">Nombres<br>de classe</p>
+                                  <p class="fontsize-sm m-0">Nombre<br>de classe</p>
                               </div>
                               <div class="rounded-circle iq-card-icon iq-bg-info "><i class="ri-refund-line"></i></div>
                            </div>
