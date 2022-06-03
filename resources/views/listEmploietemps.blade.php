@@ -38,12 +38,12 @@
                              </thead>
                              <tbody>
                                 <tr>
-                                    <th> <p style="display: none;" >a</p> 7H00/9H00</th>   
+                                    <th> <p style="display: none;" >a</p> 7H00/10H00</th>   
                                    <th>
                                         @foreach ($option->Enseignements as $key2 => $aff)
                                             @foreach($aff->periodes as $key3 => $value)
                                                     @foreach($value->jours as $key1 => $affiche)
-                                                        @if($affiche->jour == "Lundi" &&  $value->heure_dep == "7H00" && $value->heure_fin == "9H00")
+                                                        @if($affiche->jour == "Lundi" &&  $value->heure_dep == "7H00" && $value->heure_fin == "10H00")
                                                             {{$aff->name}}
                                                         @elseif($key2 == $count)
                                                         @endif
@@ -55,7 +55,7 @@
                                         @foreach ($option->Enseignements as $key4 => $aff)
                                             @foreach($aff->periodes as $key3 => $value)
                                                     @foreach($value->jours as $key1 => $affiche)
-                                                        @if($affiche->jour == "Mardi" &&  $value->heure_dep == "7H00" && $value->heure_fin == "9H00")
+                                                        @if($affiche->jour == "Mardi" &&  $value->heure_dep == "7H00" && $value->heure_fin == "10H00")
                                                             {{$aff->name}}
                                                         @endif
                                                     @endforeach
@@ -66,7 +66,7 @@
                                         @foreach ($option->Enseignements as $key5 => $aff)
                                             @foreach($aff->periodes as $key3 => $value)
                                                     @foreach($value->jours as $key1 => $affiche)
-                                                        @if($affiche->jour == "Mercredi" &&  $value->heure_dep == "7H00" && $value->heure_fin == "9H00")
+                                                        @if($affiche->jour == "Mercredi" &&  $value->heure_dep == "7H00" && $value->heure_fin == "10H00")
                                                             {{$aff->name}}
                                                         @endif
                                                     @endforeach
@@ -77,7 +77,7 @@
                                         @foreach ($option->Enseignements as $key6 => $aff)
                                             @foreach($aff->periodes as $key3 => $value)
                                                     @foreach($value->jours as $key1 => $affiche)
-                                                        @if($affiche->jour == "Jeudi" &&  $value->heure_dep == "7H00" && $value->heure_fin == "9H00")
+                                                        @if($affiche->jour == "Jeudi" &&  $value->heure_dep == "7H00" && $value->heure_fin == "10H00")
                                                             {{$aff->name}}
                                                         @endif
                                                     @endforeach
@@ -88,7 +88,7 @@
                                         @foreach ($option->Enseignements as $key7 => $aff)
                                             @foreach($aff->periodes as $key3 => $value)
                                                     @foreach($value->jours as $key1 => $affiche)
-                                                        @if($affiche->jour == "Vendredi" &&  $value->heure_dep == "7H00" && $value->heure_fin == "9H00")
+                                                        @if($affiche->jour == "Vendredi" &&  $value->heure_dep == "7H00" && $value->heure_fin == "10H00")
                                                             {{$aff->name}}
                                                         @endif
                                                     @endforeach
@@ -99,7 +99,7 @@
                                         @foreach ($option->Enseignements as $key7 => $aff)
                                             @foreach($aff->periodes as $key3 => $value)
                                                     @foreach($value->jours as $key1 => $affiche)
-                                                        @if($affiche->jour == "Samedi" &&  $value->heure_dep == "7H00" && $value->heure_fin == "9H00")
+                                                        @if($affiche->jour == "Samedi" &&  $value->heure_dep == "7H00" && $value->heure_fin == "10H00")
                                                             {{$aff->name}}
                                                         @endif
                                                     @endforeach
@@ -110,87 +110,7 @@
                                         @foreach ($option->Enseignements as $key7 => $aff)
                                             @foreach($aff->periodes as $key3 => $value)
                                                     @foreach($value->jours as $key1 => $affiche)
-                                                        @if($affiche->jour == "Dimanche" &&  $value->heure_dep == "7H00" && $value->heure_fin == "9H00")
-                                                            {{$aff->name}}
-                                                        @endif
-                                                    @endforeach
-                                            @endforeach
-                                        @endforeach  
-                                    </th> 
-                                </tr>    
-                                <tr>
-                                    <th> <p style="display: none;" >b</p>  9H00/11H00</th>       
-                                    <th>
-                                        @foreach ($option->Enseignements as $key7 => $aff)
-                                            @foreach($aff->periodes as $key3 => $value)
-                                                    @foreach($value->jours as $key1 => $affiche)
-                                                        @if($affiche->jour == "Lundi" &&  $value->heure_dep == "9H00" && $value->heure_fin == "11H00")
-                                                            {{$aff->name}}
-                                                        @endif
-                                                    @endforeach
-                                            @endforeach
-                                        @endforeach  
-                                    </th> 
-                                    <th>
-                                        @foreach ($option->Enseignements as $key7 => $aff)
-                                            @foreach($aff->periodes as $key3 => $value)
-                                                    @foreach($value->jours as $key1 => $affiche)
-                                                        @if($affiche->jour == "Mardi" &&  $value->heure_dep == "9H00" && $value->heure_fin == "11H00")
-                                                            {{$aff->name}}
-                                                        @endif
-                                                    @endforeach
-                                            @endforeach
-                                        @endforeach  
-                                    </th> 
-                                    <th>
-                                        @foreach ($option->Enseignements as $key7 => $aff)
-                                            @foreach($aff->periodes as $key3 => $value)
-                                                    @foreach($value->jours as $key1 => $affiche)
-                                                        @if($affiche->jour == "Mercredi" &&  $value->heure_dep == "9H00" && $value->heure_fin == "11H00")
-                                                            {{$aff->name}}
-                                                        @endif
-                                                    @endforeach
-                                            @endforeach
-                                        @endforeach  
-                                    </th> 
-                                    <th>
-                                        @foreach ($option->Enseignements as $key7 => $aff)
-                                            @foreach($aff->periodes as $key3 => $value)
-                                                    @foreach($value->jours as $key1 => $affiche)
-                                                        @if($affiche->jour == "Jeudi" &&  $value->heure_dep == "9H00" && $value->heure_fin == "11H00")
-                                                            {{$aff->name}}
-                                                        @endif
-                                                    @endforeach
-                                            @endforeach
-                                        @endforeach  
-                                    </th> 
-                                    <th>
-                                        @foreach ($option->Enseignements as $key7 => $aff)
-                                            @foreach($aff->periodes as $key3 => $value)
-                                                    @foreach($value->jours as $key1 => $affiche)
-                                                        @if($affiche->jour == "Vendredi" &&  $value->heure_dep == "9H00" && $value->heure_fin == "11H00")
-                                                            {{$aff->name}}
-                                                        @endif
-                                                    @endforeach
-                                            @endforeach
-                                        @endforeach  
-                                    </th> 
-                                    <th>
-                                        @foreach ($option->Enseignements as $key7 => $aff)
-                                            @foreach($aff->periodes as $key3 => $value)
-                                                    @foreach($value->jours as $key1 => $affiche)
-                                                        @if($affiche->jour == "Samedi" &&  $value->heure_dep == "9H00" && $value->heure_fin == "11H00")
-                                                            {{$aff->name}}
-                                                        @endif
-                                                    @endforeach
-                                            @endforeach
-                                        @endforeach  
-                                    </th> 
-                                    <th>
-                                        @foreach ($option->Enseignements as $key7 => $aff)
-                                            @foreach($aff->periodes as $key3 => $value)
-                                                    @foreach($value->jours as $key1 => $affiche)
-                                                        @if($affiche->jour == "Dimanche" &&  $value->heure_dep == "9H00" && $value->heure_fin == "11H00")
+                                                        @if($affiche->jour == "Dimanche" &&  $value->heure_dep == "7H00" && $value->heure_fin == "10H00")
                                                             {{$aff->name}}
                                                         @endif
                                                     @endforeach
@@ -199,12 +119,12 @@
                                     </th> 
                                 </tr>    
                                 <tr>
-                                    <th> <p style="display: none;" >c</p> 11H00/13H00</th>       
+                                    <th> <p style="display: none;" >b</p>  10H00/13H00</th>       
                                     <th>
                                         @foreach ($option->Enseignements as $key7 => $aff)
                                             @foreach($aff->periodes as $key3 => $value)
                                                     @foreach($value->jours as $key1 => $affiche)
-                                                        @if($affiche->jour == "Lundi" &&  $value->heure_dep == "11H00" && $value->heure_fin == "13H00")
+                                                        @if($affiche->jour == "Lundi" &&  $value->heure_dep == "10H00" && $value->heure_fin == "13H00")
                                                             {{$aff->name}}
                                                         @endif
                                                     @endforeach
@@ -215,7 +135,7 @@
                                         @foreach ($option->Enseignements as $key7 => $aff)
                                             @foreach($aff->periodes as $key3 => $value)
                                                     @foreach($value->jours as $key1 => $affiche)
-                                                        @if($affiche->jour == "Mardi" &&  $value->heure_dep == "11H00" && $value->heure_fin == "13H00")
+                                                        @if($affiche->jour == "Mardi" &&  $value->heure_dep == "10H00" && $value->heure_fin == "13H00")
                                                             {{$aff->name}}
                                                         @endif
                                                     @endforeach
@@ -226,7 +146,7 @@
                                         @foreach ($option->Enseignements as $key7 => $aff)
                                             @foreach($aff->periodes as $key3 => $value)
                                                     @foreach($value->jours as $key1 => $affiche)
-                                                        @if($affiche->jour == "Mercredi" &&  $value->heure_dep == "11H00" && $value->heure_fin == "13H00")
+                                                        @if($affiche->jour == "Mercredi" &&  $value->heure_dep == "10H00" && $value->heure_fin == "13H00")
                                                             {{$aff->name}}
                                                         @endif
                                                     @endforeach
@@ -237,7 +157,7 @@
                                         @foreach ($option->Enseignements as $key7 => $aff)
                                             @foreach($aff->periodes as $key3 => $value)
                                                     @foreach($value->jours as $key1 => $affiche)
-                                                        @if($affiche->jour == "Jeudi" &&  $value->heure_dep == "11H00" && $value->heure_fin == "13H00")
+                                                        @if($affiche->jour == "Jeudi" &&  $value->heure_dep == "10H00" && $value->heure_fin == "13H00")
                                                             {{$aff->name}}
                                                         @endif
                                                     @endforeach
@@ -248,7 +168,7 @@
                                         @foreach ($option->Enseignements as $key7 => $aff)
                                             @foreach($aff->periodes as $key3 => $value)
                                                     @foreach($value->jours as $key1 => $affiche)
-                                                        @if($affiche->jour == "Vendredi" &&  $value->heure_dep == "11H00" && $value->heure_fin == "13H00")
+                                                        @if($affiche->jour == "Vendredi" &&  $value->heure_dep == "10H00" && $value->heure_fin == "13H00")
                                                             {{$aff->name}}
                                                         @endif
                                                     @endforeach
@@ -259,7 +179,7 @@
                                         @foreach ($option->Enseignements as $key7 => $aff)
                                             @foreach($aff->periodes as $key3 => $value)
                                                     @foreach($value->jours as $key1 => $affiche)
-                                                        @if($affiche->jour == "Samedi" &&  $value->heure_dep == "11H00" && $value->heure_fin == "13H00")
+                                                        @if($affiche->jour == "Samedi" &&  $value->heure_dep == "10H00" && $value->heure_fin == "13H00")
                                                             {{$aff->name}}
                                                         @endif
                                                     @endforeach
@@ -270,7 +190,87 @@
                                         @foreach ($option->Enseignements as $key7 => $aff)
                                             @foreach($aff->periodes as $key3 => $value)
                                                     @foreach($value->jours as $key1 => $affiche)
-                                                        @if($affiche->jour == "Dimanche" &&  $value->heure_dep == "11H00" && $value->heure_fin == "13H00")
+                                                        @if($affiche->jour == "Dimanche" &&  $value->heure_dep == "10H00" && $value->heure_fin == "13H00")
+                                                            {{$aff->name}}
+                                                        @endif
+                                                    @endforeach
+                                            @endforeach
+                                        @endforeach  
+                                    </th> 
+                                </tr>    
+                                <tr>
+                                    <th> <p style="display: none;" >c</p> 13H00/16H00</th>       
+                                    <th>
+                                        @foreach ($option->Enseignements as $key7 => $aff)
+                                            @foreach($aff->periodes as $key3 => $value)
+                                                    @foreach($value->jours as $key1 => $affiche)
+                                                        @if($affiche->jour == "Lundi" &&  $value->heure_dep == "13H00" && $value->heure_fin == "16H00")
+                                                            {{$aff->name}}
+                                                        @endif
+                                                    @endforeach
+                                            @endforeach
+                                        @endforeach  
+                                    </th> 
+                                    <th>
+                                        @foreach ($option->Enseignements as $key7 => $aff)
+                                            @foreach($aff->periodes as $key3 => $value)
+                                                    @foreach($value->jours as $key1 => $affiche)
+                                                        @if($affiche->jour == "Mardi" &&  $value->heure_dep == "13H00" && $value->heure_fin == "16H00")
+                                                            {{$aff->name}}
+                                                        @endif
+                                                    @endforeach
+                                            @endforeach
+                                        @endforeach  
+                                    </th> 
+                                    <th>
+                                        @foreach ($option->Enseignements as $key7 => $aff)
+                                            @foreach($aff->periodes as $key3 => $value)
+                                                    @foreach($value->jours as $key1 => $affiche)
+                                                        @if($affiche->jour == "Mercredi" &&  $value->heure_dep == "13H00" && $value->heure_fin == "16H00")
+                                                            {{$aff->name}}
+                                                        @endif
+                                                    @endforeach
+                                            @endforeach
+                                        @endforeach  
+                                    </th> 
+                                    <th>
+                                        @foreach ($option->Enseignements as $key7 => $aff)
+                                            @foreach($aff->periodes as $key3 => $value)
+                                                    @foreach($value->jours as $key1 => $affiche)
+                                                        @if($affiche->jour == "Jeudi" &&  $value->heure_dep == "13H00" && $value->heure_fin == "16H00")
+                                                            {{$aff->name}}
+                                                        @endif
+                                                    @endforeach
+                                            @endforeach
+                                        @endforeach  
+                                    </th> 
+                                    <th>
+                                        @foreach ($option->Enseignements as $key7 => $aff)
+                                            @foreach($aff->periodes as $key3 => $value)
+                                                    @foreach($value->jours as $key1 => $affiche)
+                                                        @if($affiche->jour == "Vendredi" &&  $value->heure_dep == "13H00" && $value->heure_fin == "16H00")
+                                                            {{$aff->name}}
+                                                        @endif
+                                                    @endforeach
+                                            @endforeach
+                                        @endforeach  
+                                    </th> 
+                                    <th>
+                                        @foreach ($option->Enseignements as $key7 => $aff)
+                                            @foreach($aff->periodes as $key3 => $value)
+                                                    @foreach($value->jours as $key1 => $affiche)
+                                                        @if($affiche->jour == "Samedi" &&  $value->heure_dep == "13H00" && $value->heure_fin == "16H00")
+                                                            {{$aff->name}}
+                                                        @endif
+                                                    @endforeach
+                                            @endforeach
+                                        @endforeach  
+                                    </th> 
+                                    <th>
+                                        @foreach ($option->Enseignements as $key7 => $aff)
+                                            @foreach($aff->periodes as $key3 => $value)
+                                                    @foreach($value->jours as $key1 => $affiche)
+                                                        @if($affiche->jour == "Dimanche" &&  $value->heure_dep == "13H00" && $value->heure_fin == "16H00")
                                                             {{$aff->name}}
                                                         @endif
                                                     @endforeach
@@ -279,12 +279,12 @@
                                     </th> 
                                 </tr> 
                                 <tr>
-                                    <th> <p style="display: none;" >d</p>  13H00/15H00</th>       
+                                    <th> <p style="display: none;" >d</p>  16H00/19H00</th>       
                                     <th>
                                         @foreach ($option->Enseignements as $key7 => $aff)
                                             @foreach($aff->periodes as $key3 => $value)
                                                     @foreach($value->jours as $key1 => $affiche)
-                                                        @if($affiche->jour == "Lundi" &&  $value->heure_dep == "13H00" && $value->heure_fin == "15H00")
+                                                        @if($affiche->jour == "Lundi" &&  $value->heure_dep == "16H00" && $value->heure_fin == "19H00")
                                                             {{$aff->name}}
                                                         @endif
                                                     @endforeach
@@ -295,7 +295,7 @@
                                         @foreach ($option->Enseignements as $key7 => $aff)
                                             @foreach($aff->periodes as $key3 => $value)
                                                     @foreach($value->jours as $key1 => $affiche)
-                                                        @if($affiche->jour == "Mardi" &&  $value->heure_dep == "13H00" && $value->heure_fin == "15H00")
+                                                        @if($affiche->jour == "Mardi" &&  $value->heure_dep == "16H00" && $value->heure_fin == "19H00")
                                                             {{$aff->name}}
                                                         @endif
                                                     @endforeach
@@ -306,7 +306,7 @@
                                         @foreach ($option->Enseignements as $key7 => $aff)
                                             @foreach($aff->periodes as $key3 => $value)
                                                     @foreach($value->jours as $key1 => $affiche)
-                                                        @if($affiche->jour == "Mercredi" &&  $value->heure_dep == "13H00" && $value->heure_fin == "15H00")
+                                                        @if($affiche->jour == "Mercredi" &&  $value->heure_dep == "16H00" && $value->heure_fin == "19H00")
                                                             {{$aff->name}}
                                                         @endif
                                                     @endforeach
@@ -317,7 +317,7 @@
                                         @foreach ($option->Enseignements as $key7 => $aff)
                                             @foreach($aff->periodes as $key3 => $value)
                                                     @foreach($value->jours as $key1 => $affiche)
-                                                        @if($affiche->jour == "Jeudi" &&  $value->heure_dep == "13H00" && $value->heure_fin == "15H00")
+                                                        @if($affiche->jour == "Jeudi" &&  $value->heure_dep == "16H00" && $value->heure_fin == "19H00")
                                                             {{$aff->name}}
                                                         @endif
                                                     @endforeach
@@ -328,7 +328,7 @@
                                         @foreach ($option->Enseignements as $key7 => $aff)
                                             @foreach($aff->periodes as $key3 => $value)
                                                     @foreach($value->jours as $key1 => $affiche)
-                                                        @if($affiche->jour == "Vendredi" &&  $value->heure_dep == "13H00" && $value->heure_fin == "15H00")
+                                                        @if($affiche->jour == "Vendredi" &&  $value->heure_dep == "16H00" && $value->heure_fin == "19H00")
                                                             {{$aff->name}}
                                                         @endif
                                                     @endforeach
@@ -339,7 +339,7 @@
                                         @foreach ($option->Enseignements as $key7 => $aff)
                                             @foreach($aff->periodes as $key3 => $value)
                                                     @foreach($value->jours as $key1 => $affiche)
-                                                        @if($affiche->jour == "Samedi" &&  $value->heure_dep == "13H00" && $value->heure_fin == "15H00")
+                                                        @if($affiche->jour == "Samedi" &&  $value->heure_dep == "16H00" && $value->heure_fin == "19H00")
                                                             {{$aff->name}}
                                                         @endif
                                                     @endforeach
@@ -350,167 +350,7 @@
                                         @foreach ($option->Enseignements as $key7 => $aff)
                                             @foreach($aff->periodes as $key3 => $value)
                                                     @foreach($value->jours as $key1 => $affiche)
-                                                        @if($affiche->jour == "Dimanche" &&  $value->heure_dep == "13H00" && $value->heure_fin == "15H00")
-                                                            {{$aff->name}}
-                                                        @endif
-                                                    @endforeach
-                                            @endforeach
-                                        @endforeach  
-                                    </th> 
-                                </tr>
-                                <tr>
-                                    <th> <p style="display: none;" >e</p>  15H00/17H00</th>       
-                                    <th>
-                                        @foreach ($option->Enseignements as $key7 => $aff)
-                                            @foreach($aff->periodes as $key3 => $value)
-                                                    @foreach($value->jours as $key1 => $affiche)
-                                                        @if($affiche->jour == "Lundi" &&  $value->heure_dep == "15H00" && $value->heure_fin == "17H00")
-                                                            {{$aff->name}}
-                                                        @endif
-                                                    @endforeach
-                                            @endforeach
-                                        @endforeach  
-                                    </th> 
-                                    <th>
-                                        @foreach ($option->Enseignements as $key7 => $aff)
-                                            @foreach($aff->periodes as $key3 => $value)
-                                                    @foreach($value->jours as $key1 => $affiche)
-                                                        @if($affiche->jour == "Mardi" &&  $value->heure_dep == "15H00" && $value->heure_fin == "17H00")
-                                                            {{$aff->name}}
-                                                        @endif
-                                                    @endforeach
-                                            @endforeach
-                                        @endforeach  
-                                    </th> 
-                                    <th>
-                                        @foreach ($option->Enseignements as $key7 => $aff)
-                                            @foreach($aff->periodes as $key3 => $value)
-                                                    @foreach($value->jours as $key1 => $affiche)
-                                                        @if($affiche->jour == "Mercredi" &&  $value->heure_dep == "15H00" && $value->heure_fin == "17H00")
-                                                            {{$aff->name}}
-                                                        @endif
-                                                    @endforeach
-                                            @endforeach
-                                        @endforeach  
-                                    </th> 
-                                    <th>
-                                        @foreach ($option->Enseignements as $key7 => $aff)
-                                            @foreach($aff->periodes as $key3 => $value)
-                                                    @foreach($value->jours as $key1 => $affiche)
-                                                        @if($affiche->jour == "Jeudi" &&  $value->heure_dep == "15H00" && $value->heure_fin == "17H00")
-                                                            {{$aff->name}}
-                                                        @endif
-                                                    @endforeach
-                                            @endforeach
-                                        @endforeach  
-                                    </th> 
-                                    <th>
-                                        @foreach ($option->Enseignements as $key7 => $aff)
-                                            @foreach($aff->periodes as $key3 => $value)
-                                                    @foreach($value->jours as $key1 => $affiche)
-                                                        @if($affiche->jour == "Vendredi" &&  $value->heure_dep == "15H00" && $value->heure_fin == "17H00")
-                                                            {{$aff->name}}
-                                                        @endif
-                                                    @endforeach
-                                            @endforeach
-                                        @endforeach  
-                                    </th> 
-                                    <th>
-                                        @foreach ($option->Enseignements as $key7 => $aff)
-                                            @foreach($aff->periodes as $key3 => $value)
-                                                    @foreach($value->jours as $key1 => $affiche)
-                                                        @if($affiche->jour == "Samedi" &&  $value->heure_dep == "15H00" && $value->heure_fin == "17H00")
-                                                            {{$aff->name}}
-                                                        @endif
-                                                    @endforeach
-                                            @endforeach
-                                        @endforeach  
-                                    </th> 
-                                    <th>
-                                        @foreach ($option->Enseignements as $key7 => $aff)
-                                            @foreach($aff->periodes as $key3 => $value)
-                                                    @foreach($value->jours as $key1 => $affiche)
-                                                        @if($affiche->jour == "Dimanche" &&  $value->heure_dep == "15H00" && $value->heure_fin == "17H00")
-                                                            {{$aff->name}}
-                                                        @endif
-                                                    @endforeach
-                                            @endforeach
-                                        @endforeach  
-                                    </th> 
-                                </tr> 
-                                <tr>
-                                    <th> <p style="display: none;" >f</p>  17H00/19H00</th>       
-                                    <th>
-                                        @foreach ($option->Enseignements as $key7 => $aff)
-                                            @foreach($aff->periodes as $key3 => $value)
-                                                    @foreach($value->jours as $key1 => $affiche)
-                                                        @if($affiche->jour == "Lundi" &&  $value->heure_dep == "17H00" && $value->heure_fin == "19H00")
-                                                            {{$aff->name}}
-                                                        @endif
-                                                    @endforeach
-                                            @endforeach
-                                        @endforeach  
-                                    </th> 
-                                    <th>
-                                        @foreach ($option->Enseignements as $key7 => $aff)
-                                            @foreach($aff->periodes as $key3 => $value)
-                                                    @foreach($value->jours as $key1 => $affiche)
-                                                        @if($affiche->jour == "Mardi" &&  $value->heure_dep == "17H00" && $value->heure_fin == "19H00")
-                                                            {{$aff->name}}
-                                                        @endif
-                                                    @endforeach
-                                            @endforeach
-                                        @endforeach  
-                                    </th> 
-                                    <th>
-                                        @foreach ($option->Enseignements as $key7 => $aff)
-                                            @foreach($aff->periodes as $key3 => $value)
-                                                    @foreach($value->jours as $key1 => $affiche)
-                                                        @if($affiche->jour == "Mercredi" &&  $value->heure_dep == "17H00" && $value->heure_fin == "19H00")
-                                                            {{$aff->name}}
-                                                        @endif
-                                                    @endforeach
-                                            @endforeach
-                                        @endforeach  
-                                    </th> 
-                                    <th>
-                                        @foreach ($option->Enseignements as $key7 => $aff)
-                                            @foreach($aff->periodes as $key3 => $value)
-                                                    @foreach($value->jours as $key1 => $affiche)
-                                                        @if($affiche->jour == "Jeudi" &&  $value->heure_dep == "17H00" && $value->heure_fin == "19H00")
-                                                            {{$aff->name}}
-                                                        @endif
-                                                    @endforeach
-                                            @endforeach
-                                        @endforeach  
-                                    </th> 
-                                    <th>
-                                        @foreach ($option->Enseignements as $key7 => $aff)
-                                            @foreach($aff->periodes as $key3 => $value)
-                                                    @foreach($value->jours as $key1 => $affiche)
-                                                        @if($affiche->jour == "Vendredi" &&  $value->heure_dep == "17H00" && $value->heure_fin == "19H00")
-                                                            {{$aff->name}}
-                                                        @endif
-                                                    @endforeach
-                                            @endforeach
-                                        @endforeach  
-                                    </th> 
-                                    <th>
-                                        @foreach ($option->Enseignements as $key7 => $aff)
-                                            @foreach($aff->periodes as $key3 => $value)
-                                                    @foreach($value->jours as $key1 => $affiche)
-                                                        @if($affiche->jour == "Samedi" &&  $value->heure_dep == "17H00" && $value->heure_fin == "19H00")
-                                                            {{$aff->name}}
-                                                        @endif
-                                                    @endforeach
-                                            @endforeach
-                                        @endforeach  
-                                    </th> 
-                                    <th>
-                                        @foreach ($option->Enseignements as $key7 => $aff)
-                                            @foreach($aff->periodes as $key3 => $value)
-                                                    @foreach($value->jours as $key1 => $affiche)
-                                                        @if($affiche->jour == "Dimanche" &&  $value->heure_dep == "17H00" && $value->heure_fin == "19H00")
+                                                        @if($affiche->jour == "Dimanche" &&  $value->heure_dep == "16H00" && $value->heure_fin == "19H00")
                                                             {{$aff->name}}
                                                         @endif
                                                     @endforeach
