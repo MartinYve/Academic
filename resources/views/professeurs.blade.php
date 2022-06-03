@@ -36,7 +36,7 @@ use Illuminate\Support\Facades\DB; ?>
                                 ?>
 								<span class="position mb-2"> @if(!empty($enseignement->name) == null) Pas d'enseignementt @else Enseignant de {{$enseignement->name}} @endif </span>
 								<div class="faded">
-									<p>I am an ambitious workaholic, but apart from that, pretty simple person.</p>
+									
 									<ul class="ftco-social text-center">
                                         <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
                                         <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>

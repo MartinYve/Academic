@@ -86,7 +86,6 @@ class UserSeeder extends Seeder
         ]);
         DB::insert('insert into role_user(id, user_id, role_id) values(?,?,?)', [6,$user6->id,3]);
 
-<<<<<<< HEAD
         $user7 = User::create([
             'name' => 'Mayi',
             'last_name' => 'Alan',
@@ -207,21 +206,19 @@ class UserSeeder extends Seeder
         ]);
         DB::insert('insert into role_user(id, user_id, role_id) values(?,?,?)', [16,$user16->id,3]);
     
-    
-    
-=======
-        $user6 = User::create([
-            'name' => 'Delegue',
-            'last_name' => 'new',
-            'matricule' => 'U-23456',
-            'option_id' => 1 ,
-            'email' => 'mbockjosias82@gmail.com',
-            'phone_number' => '683080739',
+        $user17 = User::create([
+            'name' => 'Brinda',
+            'last_name' => 'Zoe',
+            'matricule' => '19NTI021I',
+            'option_id' => 3 ,
+            'email' => 'brindazoe@gmail.com',
+            'phone_number' => '658530438',
             'password' => Hash::make('password'),
             'avatar' => 'avatar.png', 
         ]);
-        DB::insert('insert into role_user(id, user_id, role_id) values(?,?,?)', [7,$user6->id,4]);
->>>>>>> 869404f1fbdf2631029e8179bee0061afd3ec438
+        DB::insert('insert into role_user(id, user_id, role_id) values(?,?,?)', [17,$user17->id,4]);
+    
+    
     }
 
 }
