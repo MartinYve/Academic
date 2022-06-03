@@ -38,7 +38,7 @@
                              </thead>
                              <tbody>
                                 <tr>
-                                    <th>7H00/9H00</th>   
+                                    <th> <p style="display: none;" >a</p> 7H00/9H00</th>   
                                    <th>
                                         @foreach ($option->Enseignements as $key2 => $aff)
                                             @foreach($aff->periodes as $key3 => $value)
@@ -119,7 +119,7 @@
                                     </th> 
                                 </tr>    
                                 <tr>
-                                    <th>9H00/11H00</th>       
+                                    <th> <p style="display: none;" >b</p>  9H00/11H00</th>       
                                     <th>
                                         @foreach ($option->Enseignements as $key7 => $aff)
                                             @foreach($aff->periodes as $key3 => $value)
@@ -199,7 +199,7 @@
                                     </th> 
                                 </tr>    
                                 <tr>
-                                    <th>11H00/13H00</th>       
+                                    <th> <p style="display: none;" >c</p> 11H00/13H00</th>       
                                     <th>
                                         @foreach ($option->Enseignements as $key7 => $aff)
                                             @foreach($aff->periodes as $key3 => $value)
@@ -279,7 +279,7 @@
                                     </th> 
                                 </tr> 
                                 <tr>
-                                    <th>13H00/15H00</th>       
+                                    <th> <p style="display: none;" >d</p>  13H00/15H00</th>       
                                     <th>
                                         @foreach ($option->Enseignements as $key7 => $aff)
                                             @foreach($aff->periodes as $key3 => $value)
@@ -359,7 +359,7 @@
                                     </th> 
                                 </tr>
                                 <tr>
-                                    <th>15H00/17H00</th>       
+                                    <th> <p style="display: none;" >e</p>  15H00/17H00</th>       
                                     <th>
                                         @foreach ($option->Enseignements as $key7 => $aff)
                                             @foreach($aff->periodes as $key3 => $value)
@@ -439,7 +439,7 @@
                                     </th> 
                                 </tr> 
                                 <tr>
-                                    <th>17H00/19H00</th>       
+                                    <th> <p style="display: none;" >f</p>  17H00/19H00</th>       
                                     <th>
                                         @foreach ($option->Enseignements as $key7 => $aff)
                                             @foreach($aff->periodes as $key3 => $value)
@@ -521,11 +521,6 @@
                              </tbody>
                            </table>
                         </div>
-                           <div class="row justify-content-between mt-3">
-                              <div id="user-list-page-info" class="col-md-6">
-                                 <span>Showing 1 to 5 of 5 entries</span>
-                              </div>
-                           </div>
                      </div>
                   </div>
             </div>
@@ -533,9 +528,7 @@
       </div>
    </div>
 
-   <script src="{{asset('plugins/jquery/jquery.min.js')}}"></script>
-<!-- Bootstrap 4 -->
-<script src="{{asset('plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+
 <!-- DataTables  & Plugins -->
 
 

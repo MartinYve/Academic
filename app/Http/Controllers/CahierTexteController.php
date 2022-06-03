@@ -6,6 +6,7 @@ use App\Cahiertext;
 use App\Enseignant;
 use App\Enseignement;
 use App\Option;
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -61,8 +62,18 @@ class CahierTexteController extends Controller
     {
      
         Cahiertext::create($request->all());
+        $heur = Enseignant::select('heur')->where('name' , $request->enseignant)->first();
+        
+        Enseignant::where('name' , $request->enseignant)->update([
+            'heur' => $heur->heur + 2 
+        ]);
         toast('les informations ont été ajouté !!!' , 'success');
-        return view('home'); ;
+        $options = Option::all() ;
+        $enseignantsV = count(Enseignant::where('statut' , 'Vacataire')->get()) ;
+        $enseignantsT = count(Enseignant::where('statut' , 'Titulaire')->get()) ;
+        $etudiants = count(User::all()) ;
+      
+        return view('home' , compact('options','enseignantsV' , 'enseignantsT' , 'etudiants')) ;
 
     }
 

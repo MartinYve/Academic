@@ -49,6 +49,7 @@
                                     <th>@lang('Email')</th>
                                     <th>@lang('Phone')</th>
                                     <th>@lang('statut')</th>
+                                    <th>@lang('heures fait')</th>
                                     <th>@lang('Action')</th>
                                  </tr>
                              </thead>
@@ -66,6 +67,7 @@
                                     <td>{{ $enseignant->email }}</td>
                                     <td>{{$enseignant->phone_number}}</td>
                                     <td>{{$enseignant->statut}}</td>
+                                    <td>{{$enseignant->heur}}</td>
                                     <td>
                                         <a href="{{ route('enseignant.edit', $enseignant->id) }}"
                                             class="btn btn-sm btn-primary btn-icon mr-2" title="@lang('Edit details')">
