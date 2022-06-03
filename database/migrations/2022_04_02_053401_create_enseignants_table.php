@@ -21,6 +21,7 @@ class CreateEnseignantsTable extends Migration
             $table->string('last_name')->nullable();
             $table->string('matricule');
             $table->string('email')->unique();
+            $table->integer('heur')->default(0);
             $table->string('phone_number')->nullable();
             $table->string('password');
             $table->string('avatar')->default('default.png');

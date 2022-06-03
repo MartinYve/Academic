@@ -71,16 +71,6 @@
                                             class="btn btn-sm btn-primary btn-icon mr-2" title="@lang('Edit details')">
                                             <i class="ri-pencil-line"></i>
                                         </a>
-                                        <form method="POST" style="display: inline-block"
-                                            action="{{ route('devoirs.destroy', $information->id) }}"
-                                            accept-charset="UTF-8" class="delete">
-                                            @method("DELETE")
-                                            @csrf
-                                            <button class="btn btn-sm btn-danger ri-delete-bin-line" title="@lang('Delete record')"
-                                            onclick="return confirm('@lang('Are you sure you want to delete :attribute?', ['attribute'=>$information->id])');"> 
-                                            <span class="fas fa-trash"></span>
-                                            </button>
-                                        </form>
                                     </td>
                                 </tr>            
                                 @endforeach

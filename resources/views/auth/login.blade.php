@@ -48,7 +48,7 @@
                 @endif
               </div>
 
-              <button type="submit" class="btn btn-primary">{{ __('Login') }}</button>
+              <button type="submit" class="btn btn-primary">{{ __('Se connecter') }}</button>
               
               <div class="social-login">
                 <a href="#" class="facebook">
