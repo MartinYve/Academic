@@ -23,11 +23,7 @@
                         <div class="iq-card-body">
                            <div class="d-flex d-flex align-items-center justify-content-between">
                               <div>
-<<<<<<< HEAD
-                                  <h2>32%</h2>
-=======
                                   <h2>{{$enseignantsV}}</h2>
->>>>>>> 8202aca1c6f3d2d11d47e80965cd89d44412115e
                                   <p class="fontsize-sm m-0">Enseignants Vacataires</p>
                               </div>
                               <div class="rounded-circle iq-card-icon iq-bg-danger"><i class="ri-radar-line"></i></div>
@@ -40,11 +36,7 @@
                         <div class="iq-card-body">
                            <div class="d-flex d-flex align-items-center justify-content-between">
                               <div>
-<<<<<<< HEAD
-                                  <h2>32%</h2>
-=======
                                   <h2>{{$enseignantsT}}</h2>
->>>>>>> 8202aca1c6f3d2d11d47e80965cd89d44412115e
                                   <p class="fontsize-sm m-0">Enseignants Titulaires</p>
                               </div>
                               <div class="rounded-circle iq-card-icon iq-bg-warning "><i class="ri-price-tag-3-line"></i></div>
@@ -57,13 +49,8 @@
                         <div class="iq-card-body">
                            <div class="d-flex d-flex align-items-center justify-content-between">
                               <div>
-<<<<<<< HEAD
-                                  <h2>32%</h2>
-                                  <p class="fontsize-sm m-0">Nombre<br>de classe</p>
-=======
                                   <h2>10</h2>
                                   <p class="fontsize-sm m-0">Nombres de classe</p>
->>>>>>> 8202aca1c6f3d2d11d47e80965cd89d44412115e
                               </div>
                               <div class="rounded-circle iq-card-icon iq-bg-info "><i class="ri-refund-line"></i></div>
                            </div>

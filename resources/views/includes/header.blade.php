@@ -46,13 +46,13 @@ foreach ($uu as $key => $value) {
                      @endif
                      @if($value == "Enseignant")
                         <li><a href="{{route('Emploistemps.index')}}" class="iq-waves-effect" aria-expanded="false"><i class="ri-chat-check-line"></i><span>Emplois de temps</span></a></li>
-                        <li><a href="{{route('CahierTexte.index')}}" class="iq-waves-effect" aria-expanded="false"><i class="ri-chat-check-line"></i><span>Cahier de Texte</span></a></li>
                         <li><a href="{{route('cours.index')}}" class="" aria-expanded="false"><i class="ri-chat-check-line"></i><span>Créer un cours/devoir</span></a></li>
                         <li><a href="{{route('CahierTexte.create')}}" class="iq-waves-effect" aria-expanded="false"><i class="ri-chat-check-line"></i><span>Cahier de texte</span></a></li>
                      @endif
                      @if($value == "Delegue")
                         <li><a href="{{route('CahierTexte.index')}}" class="iq-waves-effect" aria-expanded="false"><i class="ri-chat-check-line"></i><span>Remplir le cahier de texte</span></a></li>
                      @endif
+                     <li><a href="{{route('ct.index')}}" class="iq-waves-effect" aria-expanded="false"><i class="ri-chat-check-line"></i><span>Voir le cahier texte</span></a></li>
                   </ul>
                </nav>
                <div class="p-3"></div>

@@ -40,7 +40,7 @@ class coursController extends Controller
      */
     public function create()
     {
-        //
+        
     }
 
     /**

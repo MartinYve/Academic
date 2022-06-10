@@ -46,4 +46,7 @@ Route::middleware('auth')->resource('Emploistemps', EmploistempsController::clas
 Route::middleware('auth' , 'enseignant')->resource('cours', coursController::class);
 Route::middleware('auth' , 'enseignant')->resource('devoirs', devoirsController::class);
 Route::middleware('auth')->resource('CahierTexte', CahierTexteController::class);
+Route::middleware('auth')->resource('ct', ctController::class);
+
+
 
