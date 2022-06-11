@@ -1,5 +1,6 @@
 <?php
 
+use App\cours;
 use App\Http\Middleware\enseignant;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -34,7 +35,8 @@ Route::get('/contact', function () {
 })->name('contact');
 
 Route::get('/cour', function () {
-    return view('cours');
+    $cours = cours::all() ;
+    return view('cours', compact('cours'));
 })->name('cour');
 
 Route::get('/home', 'HomeController@index')->name('home');

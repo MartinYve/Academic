@@ -139,12 +139,21 @@ class EnseignantController extends Controller
     {
         
         $enseignant = Enseignant::select('*')->where('id' , $id)->first();
-        $user = User::select('*')->where('email' , $enseignant->email)->first();
-        dd($user);
-        $user_role = DB::table('role_user')->where('user_id',$user->id);
+        // $user = User::select('*')->where('email' , $enseignant->email)->first();
         
-        $user_role->delete();
-        $user->delete();
+        // $user_role = DB::table('role_user')->where('user_id',$user->id);
+     
+
+        foreach ($enseignant->enseignements as $key => $value) {
+            
+            foreach ($value->periodes as $key => $val) {
+                $val->delete();
+                $periode_jour = DB::table('jour_periode')->where('user_id',$user->id);
+            }
+            $value->delete() ;
+        }
+        // $user_role->delete();
+        // $user->delete();
         $enseignant->delete();
         toast('Enseignant a été supprimé avec success !','success');
         return back();
