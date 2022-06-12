@@ -44,6 +44,7 @@ class CahierTexteController extends Controller
     {
         $user = Auth::user() ;
         $options = [] ;
+        $enseignements = [] ;
         $enseignant =  Enseignant::select('*')->where('email' , $user->email)->first() ;
         foreach ($enseignant->enseignements as $key => $value) {
             $enseignements [] = $value;
