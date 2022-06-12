@@ -48,6 +48,7 @@
                                     <th>@lang('Jour')</th>
                                     <th>@lang('Heure')</th>
                                     <th>@lang('Matière')</th>
+                                    <th>@lang("Date d'enregistrement")</th>
                                     <th>@lang('Contenu du cours')</th>
                                     <th>@lang('statut')</th>
                                  </tr>
@@ -65,6 +66,7 @@
                                     <td>{{ $information->jour }}</td>
                                     <td>{{ $information->heure }}</td>
                                     <td>{{$information->enseignement}}</td>
+                                    <td>{{$information->created_at}}</td>
                                     <td> <textarea name="" id="" cols="30" rows="5">{{$information->contenu}}</textarea> </td>
                                     <td class="btn btn-sm btn-primary btn-icon mr-2">Validé</td>
                                 </tr>            
